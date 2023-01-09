@@ -2,7 +2,7 @@
 /* ======= Base ======= */
 body {
   font-family: "Roboto", sans-serif;
-  color: #e1e1e6;
+  color: #c4c4cc;
   background: #121214;
   font-size: 14px;
   padding: 30px;
@@ -193,7 +193,7 @@ p {
 
 .main-wrapper .section-title {
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   color: #e7e7e7;
   position: relative;
@@ -273,24 +273,28 @@ p {
   margin-bottom: 15px;
 }
 
-.db-experience {
-  background-color: #ffffff;
-  border-radius: 6px;
+.card-container {
+  border: 1px solid #666666;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.footer {
-  padding: 30px;
-  padding-top: 60px;
+.card-image {
+  border-bottom: 1px solid #666666;
+  border-radius: 5px 5px 0 0;
+  background: rgba(200, 200, 200, 0.1);
+  backdrop-filter: blur(5px);
 }
 
-.footer .copyright {
-  line-height: 1.6;
-  color: #545e6c;
-  font-size: 13px;
+.card-body {
+  border-radius: 0 0 5px 5px;
+  color: white;
+  font-weight: bold;
+  padding: 7px;
 }
 
-.footer .fa-heart {
-  color: #fb866a;
+.card-image::after {
+  filter: blur(5px);
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -298,10 +302,12 @@ p {
   .sidebar-wrapper {
     position: static;
     width: inherit;
+    border-radius: 10px 10px 0 0;
   }
 
   .main-wrapper {
     padding: 30px;
+    border-radius: 0 0 10px 10px;
   }
 
   .main-wrapper .time {
@@ -319,46 +325,30 @@ p {
 /* Ex-Large devices (large desktops, 1200px and up) */
 .img-profile {
   border: 3px solid;
-  padding: 3px;
+  padding: 7px;
 }
 
-.img-thumbnail {
-  border: none;
+.img-tech {
+  height: 80px;
   width: fit-content;
-  height: 120px;
-  padding: 10px;
-  background: transparent;
+  max-width: 110px;
+  padding: 15px;
 }
 
 .badge {
   cursor: pointer;
+  padding: 8px 13px;
+  margin: 1px;
 }
 
 .badge1 {
   color: #fff;
   background-color: #189aad;
-  padding: 8px 13px;
-  margin: 1px;
   transition: all 0.2s ease-in-out;
 }
 
 .badge1:hover {
   transform: scale(1.05);
-}
-
-.badge2 {
-  color: #fff;
-  background-color: #cb3132;
-}
-
-.badge3 {
-  color: #fff;
-  background-color: #777bb3;
-}
-
-.badge4 {
-  color: #fff;
-  background-color: #d5ad42;
 }
 
 .email {
