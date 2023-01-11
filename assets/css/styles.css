@@ -1,6 +1,7 @@
 /* styles.css */
 /* ======= Base ======= */
 :root {
+  --background: #121214;
   --primary: #6833e4;
   --primary-light: #7137fa;
   --primary-hover: #5a2cc7;
@@ -9,7 +10,7 @@
   --border: #6833e4;
   --text: #a8a8b3;
   --text-secondary: #d7d7d7;
-  --background: #121214;
+  --border: #666666;
 }
 
 body {
@@ -286,13 +287,13 @@ p {
 }
 
 .card-container {
-  border: 1px solid #666666;
+  border: 1px solid var(--border);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .card-image {
-  border-bottom: 1px solid #666666;
+  border-bottom: 1px solid var(--border);
   border-radius: 5px 5px 0 0;
   background: rgba(200, 200, 200, 0.1);
 }
