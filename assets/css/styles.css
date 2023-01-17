@@ -1,5 +1,5 @@
-/* styles.css */
-/* ======= Base ======= */
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700&display=swap");
+
 :root {
   --background: #121214;
   --primary: #6833e4;
@@ -14,13 +14,11 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Mukta", sans-serif;
   color: var(--text);
   background: var(--background);
-  font-size: 14px;
   padding: 30px;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -30,6 +28,16 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+}
+
+.badge {
+  cursor: pointer;
+}
+
+.img-tech {
+  height: 80px;
+  padding: 15px;
+  max-width: 100%;
 }
 
 .btn-resume {
@@ -42,6 +50,7 @@ h6 {
 
 a {
   color: var(--secondary);
+  font-size: 14px;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -130,7 +139,7 @@ p {
 }
 
 .sidebar-wrapper .container-block {
-  padding: 15px 20px;
+  padding: 15px 19px;
 }
 
 .sidebar-wrapper .container-block-title {
@@ -329,17 +338,9 @@ p {
   }
 }
 
-/* Large devices (large desktops, 1200px and up) */
-/* Ex-Large devices (large desktops, 1200px and up) */
 .img-profile {
   border: 3px solid;
   padding: 7px;
-}
-
-.img-tech {
-  height: 80px;
-  padding: 15px;
-  max-width: 100%;
 }
 
 .email {
@@ -352,19 +353,4 @@ p {
 
 .linkedin {
   font-size: 13px;
-}
-
-.img-gray {
-  filter: gray;
-  /* IE6-9 */
-  -webkit-filter: grayscale(1);
-  /* Google Chrome, Safari 6+ & Opera 15+ */
-  filter: grayscale(1);
-  /* Microsoft Edge and Firefox 35+ */
-  transition: all 0.5s ease;
-}
-
-img:hover {
-  -webkit-filter: grayscale(0);
-  filter: none;
 }
