@@ -7,7 +7,6 @@
   --primary-hover: #5a2cc7;
   --secondary: #a682fb;
   --seconday-hover: #8467c7;
-  --border: #6833e4;
   --text: #a8a8b3;
   --text-secondary: #d7d7d7;
   --border: #666666;
@@ -28,6 +27,14 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+}
+
+hr {
+  margin-bottom: 25px;
+  border: 1px solid var(--border);
+  background-image: linear-gradient(to bottom, var(--border), transparent);
+  border-image: linear-gradient(to bottom, var(--border), transparent) 1;
+  -webkit-border-image: linear-gradient(to bottom, var(--border), transparent) 1;
 }
 
 .badge {
@@ -287,8 +294,9 @@ p {
   color: var(--secondary);
 }
 
-.main-wrapper .projects-section .intro {
-  margin-bottom: 30px;
+.details strong {
+  color: #fff;
+  font-size: 13px;
 }
 
 .main-wrapper .projects-section .item {
