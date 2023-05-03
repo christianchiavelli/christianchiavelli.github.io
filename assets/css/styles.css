@@ -10,6 +10,7 @@
 	--text: #a8a8b3;
 	--text-secondary: #d7d7d7;
 	--border: #666666;
+  --background-color: #252525;
 }
 
 body {
@@ -75,6 +76,12 @@ a:focus {
 
 p {
 	line-height: 1.5;
+}
+
+.note {
+  color: var(--text-secondary);
+  font-size: smaller;
+  font-style: italic;
 }
 
 .wrapper {
@@ -214,7 +221,7 @@ p {
 }
 
 .main-wrapper {
-	background: #252525;
+	background: var(--background-color);
 	padding: 60px;
 	padding-right: 300px;
 	border-radius: 10px;
@@ -372,4 +379,21 @@ p {
 
 .linkedin {
 	font-size: 13px;
+}
+
+/* Barra de rolagem */
+body::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--background-color);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--background-color);
+  border-radius: 4px;
 }
