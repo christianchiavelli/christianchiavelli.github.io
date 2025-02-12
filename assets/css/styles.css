@@ -372,7 +372,7 @@ p {
 	border: 3px solid;
 	padding: 7px;
 	height: 140px;
-	width: 140px;
+	width: auto;
 	object-fit: cover;
 }
 
