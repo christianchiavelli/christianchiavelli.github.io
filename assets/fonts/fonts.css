@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400..900&family=Inter:wght@300..800&family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+/* Cascadia Mono - ExtraLight */
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cascadia Mono - Light */
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cascadia Mono - Regular */
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cascadia Mono - Medium */
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cascadia Mono - SemiBold */
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Cascadia Mono - Bold */
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cascadia Mono";
+  src: url("./CascadiaMono-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Variáveis de tipografia para 2025 */
+:root {
+  /* Família de fontes */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-code: "Cascadia Mono", monospace;
+  --font-quote: "Crimson Pro", serif;
+
+  /* Tamanhos de fonte - seguindo escala modular moderna */
+  --fs-xs: 0.75rem; /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-md: 1.125rem; /* 18px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-xl: 1.5rem; /* 24px */
+  --fs-2xl: 1.875rem; /* 30px */
+  --fs-3xl: 2.25rem; /* 36px */
+  --fs-4xl: 3rem; /* 48px */
+  --fs-5xl: 3.75rem; /* 60px */
+
+  /* Pesos de fonte */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* Cores de texto - sistema semântico moderno */
+  --text-primary: #111827; /* Texto principal/títulos */
+  --text-secondary: #4b5563; /* Subtítulos e texto secundário */
+  --text-tertiary: #6b7280; /* Texto de suporte e descrições */
+  --text-placeholder: #9ca3af; /* Texto de placeholder */
+  --text-disabled: #d1d5db; /* Texto desabilitado */
+  --text-link: #2563eb; /* Links padrão */
+  --text-link-hover: #1d4ed8; /* Links em hover */
+  --text-error: #dc2626; /* Mensagens de erro */
+  --text-success: #059669; /* Mensagens de sucesso */
+  --text-warning: #d97706; /* Avisos */
+  --text-on-brand: #ffffff; /* Texto sobre elementos de marca */
+
+  /* Altura de linha para melhor legibilidade */
+  --lh-tight: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.75;
+
+  /* Espaçamento entre letras */
+  --ls-tight: -0.025em;
+  --ls-normal: 0em;
+  --ls-wide: 0.025em;
+}
+
+/* Classes de tipografia para uso consistente */
+.heading-1 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-5xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+}
+
+.heading-2 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+}
+
+.heading-3 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--text-primary);
+}
+
+.heading-4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  color: var(--text-primary);
+}
+
+.heading-5 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+.body-large {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+}
+
+.body-small {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+  color: var(--text-tertiary);
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-normal);
+  color: var (--text-tertiary);
+  letter-spacing: var(--ls-wide);
+}
+
+.button-text {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+}
+
+.link {
+  font-family: var(--font-body);
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+.code {
+  font-family: var(--font-code);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-normal);
+}
+
+.quote {
+  font-family: var(--font-quote);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-regular);
+  font-style: italic;
+  line-height: var(--lh-relaxed);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.quote-large {
+  font-family: var(--font-quote);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-medium);
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--text-on-brand);
+  letter-spacing: 0.01em;
+}
+
+.quote-attribution {
+  font-family: var(--font-heading);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  font-style: normal;
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.quote-attribution {
+  font-family: var(--font-quote);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  font-style: normal;
+  line-height: var(--lh-normal);
+  color: var(--text-secondary);
+  letter-spacing: var(--ls-normal);
+}
+
+.link:hover {
+  color: var(--text-link-hover);
+}
