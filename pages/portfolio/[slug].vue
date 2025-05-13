@@ -5,8 +5,8 @@ const projects = [
     slug: 'channels-hub',
     title: 'Channels Hub',
     category: 'PAYMENT MANAGEMENT SYSTEM',
-    heroImage: '/images/project1.jpg',
-    clientLogo: '/images/project1.jpg',
+    heroImage: '/images/channels-hub.jpg',
+    clientLogo: '/images/channels-hub.jpg',
     year: '2023-2024',
     client: 'Valtech',
     role: 'Frontend Developer',
@@ -21,9 +21,9 @@ const projects = [
       company: "Valtech Client"
     },
     gallery: [
-      '/images/project1.jpg',
-      '/images/project2.jpg',
-      '/images/project3.jpg'
+      '/images/channels-hub.jpg',
+      '/images/adm-nutrition.jpg',
+      '/images/abeka.jpg'
     ],
     nextProject: 'adm-nutrition'
   },
@@ -32,8 +32,8 @@ const projects = [
     slug: 'adm-nutrition',
     title: 'ADM Nutrition',
     category: 'INFORMATIONAL SYSTEM',
-    heroImage: '/images/project1.jpg',
-    clientLogo: '/images/project1.jpg', // Replace with actual client logo
+    heroImage: '/images/adm-nutrition.jpg',
+    clientLogo: '/images/adm-nutrition.jpg',
     year: '2022-2023',
     client: 'Valtech',
     role: 'Fullstack Developer',
@@ -48,9 +48,9 @@ const projects = [
       company: "ADM"
     },
     gallery: [
-      '/images/project1.jpg',
-      '/images/project2.jpg',
-      '/images/project3.jpg'
+      '/images/adm-nutrition.jpg',
+      '/images/abeka.jpg',
+      '/images/degust-one.jpg'
     ],
     nextProject: 'abeka'
   },
@@ -59,8 +59,8 @@ const projects = [
     slug: 'abeka',
     title: 'Abeka',
     category: 'EDUCATIONAL SYSTEM',
-    heroImage: '/images/project2.jpg',
-    clientLogo: '/images/project2.jpg', // Replace with actual client logo
+    heroImage: '/images/abeka.jpg',
+    clientLogo: '/images/abeka.jpg',
     year: '2021-2022',
     client: 'Valtech',
     role: 'Backend Developer',
@@ -75,9 +75,9 @@ const projects = [
       company: "Abeka"
     },
     gallery: [
-      '/images/project2.jpg',
-      '/images/project3.jpg',
-      '/images/project4.jpg'
+      '/images/abeka.jpg',
+      '/images/degust-one.jpg',
+      '/images/neoassist.jpg'
     ],
     nextProject: 'degust-one'
   },
@@ -86,8 +86,8 @@ const projects = [
     slug: 'degust-one',
     title: 'Degust One',
     category: 'ADMINISTRATIVE SYSTEM',
-    heroImage: '/images/project3.jpg',
-    clientLogo: '/images/project3.jpg', // Replace with actual client logo
+    heroImage: '/images/degust-one.jpg',
+    clientLogo: '/images/degust-one.jpg',
     year: '2020-2021',
     client: 'Linx Stone',
     role: 'Frontend Developer',
@@ -102,9 +102,9 @@ const projects = [
       company: "Linx Stone Client"
     },
     gallery: [
-      '/images/project3.jpg',
-      '/images/project4.jpg',
-      '/images/project1.jpg'
+      '/images/degust-one.jpg',
+      '/images/neoassist.jpg',
+      '/images/segweb-b4.jpg'
     ],
     nextProject: 'neoassist360'
   },
@@ -113,8 +113,8 @@ const projects = [
     slug: 'neoassist360',
     title: 'NeoAssist360',
     category: 'OMNICHANNEL SYSTEM',
-    heroImage: '/images/project4.jpg',
-    clientLogo: '/images/project4.jpg', // Replace with actual client logo
+    heroImage: '/images/neoassist.jpg',
+    clientLogo: '/images/neoassist.jpg',
     year: '2019-2020',
     client: 'NeoAssist',
     role: 'Frontend Developer',
@@ -129,11 +129,92 @@ const projects = [
       company: "NeoAssist Client"
     },
     gallery: [
-      '/images/project4.jpg',
-      '/images/project1.jpg',
-      '/images/project2.jpg'
+      '/images/neoassist.jpg',
+      '/images/segweb-b4.jpg',
+      '/images/channels-hub.jpg'
     ],
     nextProject: 'segweb'
+  },
+  {
+    id: 6,
+    slug: 'segweb',
+    title: 'Segweb B4',
+    category: 'INSURANCE REGULATION SYSTEM',
+    heroImage: '/images/segweb-b4.jpg',
+    clientLogo: '/images/segweb-b4.jpg',
+    year: '2018-2019',
+    client: 'Zeon Solutions',
+    role: 'Web Developer',
+    technologies: ['.NET Framework', 'jQuery', 'Bootstrap 4', 'Microsoft SQL Server', 'Git', 'Trello'],
+    overview: 'Comprehensive regulation system for managing claims in residential, commercial, industrial, condominium, and large-scale risk sectors, providing efficient resolution and streamlined processes.',
+    challenge: 'Create a robust system to manage complex insurance claims across multiple sectors, ensuring accurate tracking, efficient processing, and clear communication among all stakeholders.',
+    solution: 'We developed a comprehensive regulation system with intuitive workflows, detailed reporting capabilities, and customizable interfaces for different types of claims, making the entire process more transparent and efficient.',
+    results: 'The implementation resulted in a significant reduction in claim processing time, improved accuracy in assessment, and enhanced customer satisfaction due to quicker resolution of insurance claims.',
+    testimonial: {
+      quote: "Segweb B4 has completely transformed how we handle insurance claims, bringing unprecedented efficiency and accuracy to our processes.",
+      author: "Operations Director",
+      company: "Insurance Partner"
+    },
+    gallery: [
+      '/images/segweb-b4.jpg',
+      '/images/channels-hub.jpg',
+      '/images/edirectory.jpg'
+    ],
+    nextProject: 'edirectory'
+  },
+  {
+    id: 7,
+    slug: 'edirectory',
+    title: 'eDirectory',
+    category: 'DIRECTORY PLATFORM',
+    heroImage: '/images/edirectory.jpg',
+    clientLogo: '/images/edirectory.jpg',
+    year: '2017-2018',
+    client: 'Arca Solutions',
+    role: 'Customer Success / Developer',
+    technologies: ['PHP', 'Symfony', 'cPanel', 'Live Chat', 'Salesforce'],
+    overview: 'A versatile platform designed to create comprehensive business directories, local guides and classified portals that help companies and organizations build robust online directories and generate revenue through advertising and premium listings.',
+    challenge: 'Develop a flexible and scalable platform that could support multiple types of directories while allowing customization to meet the specific needs of different businesses and markets worldwide.',
+    solution: 'We created a feature-rich directory system with customizable listing types, advanced search functionality, monetization options, and responsive design to deliver a seamless experience across all devices.',
+    results: 'The platform has been successfully implemented by businesses worldwide, generating significant revenue through premium listings and advertisements while providing valuable resources for users searching for local businesses and services.',
+    testimonial: {
+      quote: "eDirectory provided us with the perfect solution to create our business directory, offering both flexibility and powerful monetization options.",
+      author: "Marketing Director",
+      company: "Global Directory Client"
+    },
+    gallery: [
+      '/images/edirectory.jpg',
+      '/images/ptrf.jpg',
+      '/images/neoassist.jpg'
+    ],
+    nextProject: 'ptrf'
+  },
+  {
+    id: 8,
+    slug: 'ptrf',
+    title: 'PTRF',
+    category: 'FINANCIAL RESOURCE SYSTEM',
+    heroImage: '/images/ptrf.jpg',
+    clientLogo: '/images/ptrf.jpg',
+    year: '2016',
+    client: 'MStech',
+    role: 'Web Developer Intern',
+    technologies: ['.NET Framework', 'Angular', 'Bootstrap 4', 'JIRA'],
+    overview: 'Financial resources transfer system dedicated and administered by educational units in São Paulo and Rio Grande do Sul, designed to streamline the process of transferring funds within the educational sector.',
+    challenge: 'Create an efficient system to manage and track the flow of financial resources between educational institutions, ensuring transparency, accuracy, and compliance with government regulations.',
+    solution: 'We developed a comprehensive solution with modules for budget allocation, fund transfer tracking, expense reporting, and statistical analysis to provide complete visibility into the financial processes of educational institutions.',
+    results: 'The system was successfully implemented in government schools across São Paulo and Rio Grande do Sul, resulting in improved efficiency and accuracy in managing financial resource transfers.',
+    testimonial: {
+      quote: "PTRF has revolutionized how we manage educational funding, providing unprecedented transparency and efficiency in our financial operations.",
+      author: "Educational Administrator",
+      company: "São Paulo State Education Department"
+    },
+    gallery: [
+      '/images/ptrf.jpg',
+      '/images/segweb-b4.jpg',
+      '/images/channels-hub.jpg'
+    ],
+    nextProject: 'channels-hub'
   },
 ];
 
@@ -154,11 +235,9 @@ useHead({
   ]
 });
 
-// Refs para animações
 const isVisible = ref(false);
 const inViewport = ref(false);
 
-// Detectar quando o componente estiver visível na viewport
 onMounted(() => {
   if (process.client) {
     const observer = new IntersectionObserver((entries) => {
@@ -174,32 +253,26 @@ onMounted(() => {
     const el = document.getElementById('project-detail');
     if (el) observer.observe(el);
 
-    // Animação inicial
     setTimeout(() => {
       isVisible.value = true;
     }, 100);
   }
 });
 
-// Função para encontrar o próximo projeto
 const nextProject = computed(() => {
   return projects.find(p => p.slug === project.value.nextProject) || projects[0];
 });
 
-// Função para rolagem suave para as seções
 const scrollToSection = (sectionId) => {
   if (process.client) {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Obter a altura do cabeçalho fixo
       const header = document.querySelector('header');
-      const headerHeight = header ? header.offsetHeight : 80; // Valor padrão se o cabeçalho não for encontrado
+      const headerHeight = header ? header.offsetHeight : 80;
 
-      // Calcular a posição correta considerando o offset do cabeçalho e uma pequena margem adicional
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
 
-      // Executar o scroll suave
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
@@ -248,7 +321,7 @@ const scrollToSection = (sectionId) => {
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10 lg:items-start">
             <div class="lg:col-span-3 opacity-0 animate-fade-in-up delay-200">
               <div class="rounded-lg overflow-hidden shadow-lg w-full h-full">
-                <img :src="project.heroImage" :alt="project.title" class="w-full object-cover aspect-[16/10]" />
+                <NuxtImg :src="project.heroImage" :alt="project.title" class="w-full object-cover aspect-[16/10]" />
               </div>
             </div>
 
@@ -353,7 +426,7 @@ const scrollToSection = (sectionId) => {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div v-for="(image, index) in project.gallery" :key="index"
                     class="rounded-lg overflow-hidden shadow-md transform hover:scale-[1.02] transition-all duration-500">
-                    <img :src="image" :alt="`${project.title} - Image ${index + 1}`"
+                    <NuxtImg :src="image" :alt="`${project.title} - Image ${index + 1}`"
                       class="w-full h-auto object-cover aspect-[4/3]" />
                   </div>
                 </div>
@@ -375,7 +448,7 @@ const scrollToSection = (sectionId) => {
           <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
             <NuxtLink :to="`/portfolio/${nextProject.slug}`" class="block relative">
               <div class="relative w-full aspect-[21/9] overflow-hidden">
-                <img :src="nextProject.heroImage" :alt="nextProject.title"
+                <NuxtImg :src="nextProject.heroImage" :alt="nextProject.title"
                   class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300"></div>
               </div>

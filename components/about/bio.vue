@@ -82,7 +82,7 @@ onMounted(() => {
         <div class="md:w-1/2 flex justify-center">
           <div class="relative group">
             <div class="relative z-10 overflow-hidden profile-container opacity-0 animate-fade-in-scale delay-600">
-              <img src="/images/christian.png" alt="Christian Chiavelli - Developer"
+              <NuxtImg src="/images/profile.png" alt="Christian Chiavelli - Developer"
                 class="object-cover w-full max-w-md mix-blend-multiply scale-x-[-1] transition-transform duration-500 ease-out group-hover:scale-[1.03] group-hover:scale-x-[-1.03]" />
             </div>
           </div>

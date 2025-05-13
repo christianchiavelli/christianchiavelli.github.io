@@ -29,7 +29,7 @@ const scrollToTop = () => {
           @click="scrollToTop">
           <div class="flex justify-center mb-4">
             <svg width="20" height="60" viewBox="0 0 20 60" fill="none" xmlns="http://www.w3.org/2000/svg"
-              class="text-primary group-hover:text-secondary transition-all duration-300 transform group-hover:-translate-y-1.5">
+              class="text-primary group-hover:text-secondary transition-all duration-300 transform group-hover:-translate-y-1">
               <path d="M10 59L10 1M10 1L1 10" stroke="currentColor" stroke-width="1.8" class="group-hover:stroke-2"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>

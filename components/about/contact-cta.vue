@@ -96,23 +96,23 @@ const scrollToTop = () => {
           </svg>
         </a>
       </div>
-    </div>
 
-    <div
-      class="absolute right-10 top-10 hidden md:flex flex-col items-center cursor-pointer opacity-0 animate-fade-in delay-600 group z-50"
-      @click="scrollToTop">
-      <div class="flex justify-center mb-4">
-        <svg width="20" height="60" viewBox="0 0 20 60" fill="none" xmlns="http://www.w3.org/2000/svg"
-          class="text-white group-hover:text-gray-300 transition-all duration-300 transform group-hover:-translate-y-1.5">
-          <path d="M10 59L10 1M10 1L1 10" stroke="currentColor" stroke-width="1.8" class="group-hover:stroke-2"
-            stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </div>
-      <button @click.stop="scrollToTop" class="bg-transparent border-0 p-0 cursor-pointer">
-        <div class="[writing-mode:vertical-rl] text-xs font-semibold text-white tracking-wide rotate-180">
+      <!-- Botão Scroll to Top adicionado/movido para dentro do container principal -->
+      <div
+        class="absolute right-10 top-10 hidden md:flex flex-col items-center cursor-pointer opacity-0 animate-fade-in delay-600 group z-50"
+        @click="scrollToTop">
+        <div class="flex justify-center mb-4">
+          <svg width="20" height="60" viewBox="0 0 20 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="transform transition-transform duration-300 ease-out group-hover:-translate-y-1">
+            <path d="M10 59L10 1M10 1L1 10" stroke="white" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div
+          class="[writing-mode:vertical-rl] text-xs font-semibold text-white tracking-wider rotate-180 whitespace-nowrap">
           SCROLL TO TOP
         </div>
-      </button>
+      </div>
     </div>
   </section>
 </template>

@@ -36,8 +36,8 @@ const isHovering = ref(false)
                 <div
                   class="w-[280px] h-[160px] md:w-[240px] md:h-[140px] lg:w-[280px] lg:h-[160px] xl:w-[320px] xl:h-[180px] rounded-xl shadow-lg overflow-hidden origin-center will-change-transform relative transition-transform duration-500 ease-out">
 
-                  <img :src="project.image" :alt="project.title" loading="lazy"
-                    class="w-full h-full  object-cover transition-transform duration-700" />
+                  <NuxtImg :src="project.image" :alt="project.title" loading="lazy"
+                    class="w-full h-full object-cover transition-transform duration-700" />
                 </div>
               </div>
 

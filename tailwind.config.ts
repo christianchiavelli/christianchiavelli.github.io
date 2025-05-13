@@ -90,6 +90,7 @@ export default <Config>{
         "slide-in-right": "slideInRight 0.7s ease-out forwards",
         "slide-in-left": "slideInLeft 0.7s ease-out forwards",
         "rotate-slow": "rotateAround 25s linear infinite",
+        "pulse-slow": "pulseSlow 3s ease-in-out infinite",
         shimmer: "shimmer 2.5s ease-in-out infinite",
         "text-focus-in":
           "textFocusIn 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) forwards",
@@ -241,6 +242,10 @@ export default <Config>{
         hoverFloat: {
           "0%, 100%": { transform: "translateY(0) scale(1)" },
           "50%": { transform: "translateY(-8px) scale(1.03)" },
+        },
+        pulseSlow: {
+          "0%, 100%": { transform: "scale(1)", opacity: "0.5" },
+          "50%": { transform: "scale(1.15)", opacity: "0.8" },
         },
       },
       animationDelay: {

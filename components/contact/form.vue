@@ -2,10 +2,10 @@
 import { Icon } from '@iconify/vue';
 
 const formData = reactive({
-  name: '',
+  nome: '',
   email: '',
-  subject: '',
-  message: ''
+  assunto: '',
+  mensagem: ''
 });
 
 const characterCount = ref(0);
@@ -14,13 +14,14 @@ const emailError = ref(false);
 const isSubmitting = ref(false);
 const isSuccess = ref(false);
 const isError = ref(false);
+const errorMessage = ref('');
 const formSubmitted = ref(false);
 const formRef = ref(null);
 const touchedFields = reactive({
-  name: false,
+  nome: false,
   email: false,
-  subject: false,
-  message: false
+  assunto: false,
+  mensagem: false
 });
 
 const validateEmail = () => {
@@ -38,10 +39,10 @@ const markAsTouched = (field) => {
 };
 
 const resetForm = () => {
-  formData.name = '';
+  formData.nome = '';
   formData.email = '';
-  formData.subject = '';
-  formData.message = '';
+  formData.assunto = '';
+  formData.mensagem = '';
   characterCount.value = 0;
   isSuccess.value = false;
   formSubmitted.value = false;
@@ -57,18 +58,22 @@ const resetForm = () => {
 };
 
 const submitForm = async () => {
-  // Marca todos os campos como tocados ao tentar enviar o formulário
   Object.keys(touchedFields).forEach(field => touchedFields[field] = true);
   validateEmail();
 
-  if (emailError.value) {
+  if (emailError.value || !formData.nome || !formData.email || !formData.mensagem) {
     return;
   }
 
   isSubmitting.value = true;
 
   try {
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    // Simulando processo de envio (espera de 1 segundo)
+    console.log('Dados do formulário:', formData);
+
+    // Aqui você poderia implementar um serviço de envio de email
+    // Como EmailJS, Formspree, SendGrid, etc.
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
     isSuccess.value = true;
     formSubmitted.value = true;
@@ -82,6 +87,8 @@ const submitForm = async () => {
 
   } catch (error) {
     isError.value = true;
+    errorMessage.value = 'Falha ao enviar mensagem. Por favor, tente novamente mais tarde.';
+
     setTimeout(() => {
       isError.value = false;
     }, 5000);
@@ -135,17 +142,17 @@ const submitForm = async () => {
       <div class="animate-fade-in-up opacity-0 delay-500 group">
         <label for="name" class="block mb-2 text-sm font-medium text-gray-600">Name</label>
         <div class="relative">
-          <input type="text" id="name" v-model="formData.name" @blur="markAsTouched('name')"
+          <input type="text" id="name" v-model="formData.nome" @blur="markAsTouched('nome')"
             class="w-full bg-transparent border-0 border-b-2 px-0 py-3 focus:ring-0 transition-colors outline-none text-lg"
             :class="[
-              !formData.name && touchedFields.name ? 'border-red-400' : 'border-neutral-200 focus:border-primary'
+              !formData.nome && touchedFields.nome ? 'border-error' : 'border-neutral-200 focus:border-primary'
             ]" placeholder="Let us know your name" required>
-          <div v-if="!formData.name && touchedFields.name"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center space-x-2 text-red-500">
+          <div v-if="!formData.nome && touchedFields.nome"
+            class="absolute right-0 top-1/2 -translate-y-1/2 flex items-center text-error">
             <Icon icon="mdi:alert-circle-outline" class="w-5 h-5" />
           </div>
         </div>
-        <div v-if="!formData.name && touchedFields.name" class="mt-2 text-xs text-red-500 font-medium animate-fade-in">
+        <div v-if="!formData.nome && touchedFields.nome" class="mt-2 text-xs text-error font-medium animate-fade-in">
           Please fill out this field.
         </div>
       </div>
@@ -157,18 +164,18 @@ const submitForm = async () => {
             <input type="email" id="email" v-model="formData.email" @blur="validateEmail(); markAsTouched('email')"
               class="w-full bg-transparent border-0 border-b-2 px-0 py-3 focus:ring-0 transition-colors outline-none text-lg"
               :class="[
-                (!formData.email && touchedFields.email) || emailError ? 'border-red-400' : 'border-neutral-200 focus:border-primary'
+                (!formData.email && touchedFields.email) || emailError ? 'border-error' : 'border-neutral-200 focus:border-primary'
               ]" placeholder="Where we'll send our response" required>
             <div v-if="(!formData.email && touchedFields.email) || emailError"
-              class="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center space-x-2 text-red-500">
+              class="absolute right-0 top-1/2 -translate-y-1/2 flex items-center text-error">
               <Icon icon="mdi:alert-circle-outline" class="w-5 h-5" />
             </div>
           </div>
           <div v-if="!formData.email && touchedFields.email"
-            class="mt-2 text-xs text-red-500 font-medium animate-fade-in">
+            class="mt-2 text-xs text-error font-medium animate-fade-in">
             Please fill out this field.
           </div>
-          <div v-else-if="emailError" class="mt-2 text-xs text-red-500 font-medium animate-fade-in">
+          <div v-else-if="emailError" class="mt-2 text-xs text-error font-medium animate-fade-in">
             Please enter a valid email address.
           </div>
         </div>
@@ -177,18 +184,18 @@ const submitForm = async () => {
       <div class="animate-fade-in-up opacity-0 delay-700">
         <label for="subject" class="block mb-2 text-sm font-medium text-gray-600">Subject</label>
         <div class="relative">
-          <input type="text" id="subject" v-model="formData.subject" @blur="markAsTouched('subject')"
+          <input type="text" id="subject" v-model="formData.assunto" @blur="markAsTouched('assunto')"
             class="w-full bg-transparent border-0 border-b-2 px-0 py-3 focus:ring-0 transition-colors outline-none text-lg"
             :class="[
-              !formData.subject && touchedFields.subject ? 'border-red-400' : 'border-neutral-200 focus:border-primary'
+              !formData.assunto && touchedFields.assunto ? 'border-error' : 'border-neutral-200 focus:border-primary'
             ]" placeholder="What's this about?" required>
-          <div v-if="!formData.subject && touchedFields.subject"
-            class="absolute right-0 top-1/2 transform -translate-y-1/2 flex items-center space-x-2 text-red-500">
+          <div v-if="!formData.assunto && touchedFields.assunto"
+            class="absolute right-0 top-1/2 -translate-y-1/2 flex items-center text-error">
             <Icon icon="mdi:alert-circle-outline" class="w-5 h-5" />
           </div>
         </div>
-        <div v-if="!formData.subject && touchedFields.subject"
-          class="mt-2 text-xs text-red-500 font-medium animate-fade-in">
+        <div v-if="!formData.assunto && touchedFields.assunto"
+          class="mt-2 text-xs text-error font-medium animate-fade-in">
           Please fill out this field.
         </div>
       </div>
@@ -197,19 +204,20 @@ const submitForm = async () => {
         <div class="relative">
           <label for="message" class="block mb-2 text-sm font-medium text-gray-600">Message</label>
           <div class="relative">
-            <textarea id="message" v-model="formData.message" @input="updateCharCount" @blur="markAsTouched('message')"
+            <textarea id="message" v-model="formData.mensagem" @input="updateCharCount"
+              @blur="markAsTouched('mensagem')"
               class="w-full bg-transparent border-0 border-b-2 px-0 py-3 focus:ring-0 transition-colors outline-none min-h-[150px] resize-y text-lg"
               :class="[
-                !formData.message && touchedFields.message ? 'border-red-400' : 'border-neutral-200 focus:border-primary'
+                !formData.mensagem && touchedFields.mensagem ? 'border-error' : 'border-neutral-200 focus:border-primary'
               ]" placeholder="Tell me about your project, ideas or questions..." maxlength="1000" required></textarea>
-            <div v-if="!formData.message && touchedFields.message"
-              class="absolute right-0 top-6 flex items-center space-x-2 text-red-500">
+            <div v-if="!formData.mensagem && touchedFields.mensagem"
+              class="absolute right-0 top-6 flex items-center text-error">
               <Icon icon="mdi:alert-circle-outline" class="w-5 h-5" />
             </div>
           </div>
           <div class="mt-2 flex justify-between items-center">
-            <div v-if="!formData.message && touchedFields.message"
-              class="text-xs text-red-500 font-medium animate-fade-in">
+            <div v-if="!formData.mensagem && touchedFields.mensagem"
+              class="text-xs text-error font-medium animate-fade-in">
               Please fill out this field.
             </div>
             <div class="text-xs text-neutral-500 ml-auto">
@@ -249,9 +257,9 @@ const submitForm = async () => {
       </div>
 
       <div v-if="isError" class="animate-fade-in mt-8">
-        <div class="border-l-4 border-red-500 bg-red-50/30 p-4 rounded-sm flex items-center">
-          <Icon icon="mdi:alert-circle" class="w-5 h-5 text-red-500 mr-3" />
-          <span class="text-red-700">Failed to send message. Please try again later.</span>
+        <div class="bg-red-50/30 p-4 flex items-center">
+          <Icon icon="mdi:alert-circle" class="w-5 h-5 text-error mr-3" />
+          <span class="text-error">{{ errorMessage }}</span>
         </div>
       </div>
     </form>

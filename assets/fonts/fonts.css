@@ -125,18 +125,21 @@
   --fw-extrabold: 800;
   --fw-black: 900;
 
-  /* Cores de texto - sistema semântico moderno */
+  /* Cores de texto - sistema semântico monocromático (shadow UI) */
   --text-primary: #111827; /* Texto principal/títulos */
   --text-secondary: #4b5563; /* Subtítulos e texto secundário */
   --text-tertiary: #6b7280; /* Texto de suporte e descrições */
   --text-placeholder: #9ca3af; /* Texto de placeholder */
   --text-disabled: #d1d5db; /* Texto desabilitado */
-  --text-link: #2563eb; /* Links padrão */
-  --text-link-hover: #1d4ed8; /* Links em hover */
-  --text-error: #dc2626; /* Mensagens de erro */
-  --text-success: #059669; /* Mensagens de sucesso */
-  --text-warning: #d97706; /* Avisos */
-  --text-on-brand: #ffffff; /* Texto sobre elementos de marca */
+  --text-link: #333333; /* Links padrão - cinza escuro */
+  --text-link-hover: #000000; /* Links em hover - preto */
+  --text-error: #e53e3e; /* Mensagens de erro - vermelho mais vivo */
+  --text-success: #2e2e2e; /* Mensagens de sucesso - cinza escuro */
+  --text-warning: #3a3a3a; /* Avisos - cinza escuro */
+  --text-on-brand: #ffffff; /* Texto sobre elementos de marca - branco */
+
+  /* Cores de borda para estados de erro */
+  --border-error: #fc8181; /* Borda de campos com erro - mais viva */
 
   /* Altura de linha para melhor legibilidade */
   --lh-tight: 1.25;
@@ -298,4 +301,13 @@
 
 .link:hover {
   color: var(--text-link-hover);
+}
+
+/* Utilitários para estados de erro */
+.text-error {
+  color: var(--text-error);
+}
+
+.border-error {
+  border-color: var(--border-error);
 }

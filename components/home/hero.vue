@@ -38,7 +38,7 @@ onMounted(() => {
 
 <template>
   <section
-    class="w-full flex items-center relative overflow-hidden bg-gray-50 py-20 md:pt-32 md:pb-40 opacity-0 animate-fade-in-slow">
+    class="w-full flex items-center relative overflow-hidden bg-gray-50 py-28 md:py-56 opacity-0 animate-fade-in-slow">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
       <div class="w-[clamp(220px,40vw,500px)] h-[clamp(220px,40vw,500px)] bg-white rounded-full"></div>
     </div>
@@ -120,7 +120,7 @@ onMounted(() => {
           </div>
 
           <div class="profile-container z-20 opacity-0 animate-fade-in-scale delay-900 bg-transparent">
-            <img src="/images/christian.png" alt="Christian Leonardo Chiavelli"
+            <NuxtImg src="/images/profile.png" alt="Christian Leonardo Chiavelli"
               class="profile-image mix-blend-multiply object-contain h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
           </div>
         </div>

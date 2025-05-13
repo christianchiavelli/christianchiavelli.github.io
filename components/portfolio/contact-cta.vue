@@ -1,5 +1,4 @@
 <script setup>
-// Props e emits
 const emit = defineEmits(['contact']);
 </script>
 
