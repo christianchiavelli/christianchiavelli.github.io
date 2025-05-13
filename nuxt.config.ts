@@ -6,6 +6,12 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
   css: ["~/assets/fonts/fonts.css"],
 
+  runtimeConfig: {
+    public: {
+      formspreeId: process.env.FORMSPREE_ID,
+    },
+  },
+
   app: {
     head: {
       title: "Christian Leonardo Chiavelli | Creative Developer & Designer",

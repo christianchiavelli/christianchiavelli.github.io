@@ -57,6 +57,8 @@ const resetForm = () => {
   }, 100);
 };
 
+const config = useRuntimeConfig();
+
 const submitForm = async () => {
   Object.keys(touchedFields).forEach(field => touchedFields[field] = true);
   validateEmail();
@@ -64,16 +66,24 @@ const submitForm = async () => {
   if (emailError.value || !formData.nome || !formData.email || !formData.mensagem) {
     return;
   }
-
   isSubmitting.value = true;
-
   try {
-    // Simulando processo de envio (espera de 1 segundo)
-    console.log('Dados do formulário:', formData);
+    const response = await fetch(`https://formspree.io/f/${config.public.formspreeId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        nome: formData.nome,
+        email: formData.email,
+        assunto: formData.assunto,
+        mensagem: formData.mensagem
+      })
+    });
 
-    // Aqui você poderia implementar um serviço de envio de email
-    // Como EmailJS, Formspree, SendGrid, etc.
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    if (!response.ok) {
+      throw new Error('Falha ao enviar o formulário');
+    }
 
     isSuccess.value = true;
     formSubmitted.value = true;
