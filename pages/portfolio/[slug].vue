@@ -1,227 +1,15 @@
 <script setup>
-const projects = [
-  {
-    id: 1,
-    slug: 'channels-hub',
-    title: 'Channels Hub',
-    category: 'PAYMENT MANAGEMENT SYSTEM',
-    heroImage: '/images/channels-hub.jpg',
-    clientLogo: '/images/channels-hub.jpg',
-    year: '2023-2024',
-    client: 'Valtech',
-    role: 'Frontend Developer',
-    technologies: ['.NET Core', 'Vue 3', 'TailwindCSS', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-    overview: 'Payment hub management platform that allows creating and administering entities (hubs), their respective payment service channels, and custom models for different occasions, centralizing the entire payment ecosystem.',
-    challenge: 'Create a unified and intuitive solution to manage multiple payment channels that could serve different business models and ensure consistency and security of financial operations.',
-    solution: 'We developed a scalable and flexible architecture that enables centralized management of payment channels. The interface was designed with an emphasis on usability to make payment management more efficient and less error-prone.',
-    results: 'The system provided a significant reduction in payment processing time and a decrease in transaction errors. Centralized management also facilitated gaining insights into payment patterns and user behavior.',
-    testimonial: {
-      quote: "The Channels Hub platform completely transformed our way of managing payments, bringing unprecedented efficiency and visibility.",
-      author: "Technology Director",
-      company: "Valtech Client"
-    },
-    gallery: [
-      '/images/channels-hub.jpg',
-      '/images/adm-nutrition.jpg',
-      '/images/abeka.jpg'
-    ],
-    nextProject: 'adm-nutrition'
-  },
-  {
-    id: 2,
-    slug: 'adm-nutrition',
-    title: 'ADM Nutrition',
-    category: 'INFORMATIONAL SYSTEM',
-    heroImage: '/images/adm-nutrition.jpg',
-    clientLogo: '/images/adm-nutrition.jpg',
-    year: '2022-2023',
-    client: 'Valtech',
-    role: 'Fullstack Developer',
-    technologies: ['.NET Core', '.NET Framework', 'Optimizely (EpiServer)', 'Vue 3', 'TailwindCSS', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-    overview: 'Informational system with the goal and purpose of showcasing information about the ADM company, its products, and services, emphasizing its expertise and knowledge in human and animal nutrition.',
-    challenge: 'Create a robust and visually appealing informational system that could effectively demonstrate ADM\'s range of nutrition products and services, focusing on both human and animal nutrition.',
-    solution: 'We developed a rich content platform using Optimizely (EpiServer) that allows easy management of information about products, services, and technical expertise, offering a fluid user experience for site visitors.',
-    results: 'The system resulted in a significant increase in user engagement, with longer average time spent and higher conversion rates. The platform also improved the perception of the ADM brand as a leader in nutrition solutions.',
-    testimonial: {
-      quote: "The informational system developed by the team not only met but exceeded our expectations in terms of functionality and design.",
-      author: "Marketing Manager",
-      company: "ADM"
-    },
-    gallery: [
-      '/images/adm-nutrition.jpg',
-      '/images/abeka.jpg',
-      '/images/degust-one.jpg'
-    ],
-    nextProject: 'abeka'
-  },
-  {
-    id: 3,
-    slug: 'abeka',
-    title: 'Abeka',
-    category: 'EDUCATIONAL SYSTEM',
-    heroImage: '/images/abeka.jpg',
-    clientLogo: '/images/abeka.jpg',
-    year: '2021-2022',
-    client: 'Valtech',
-    role: 'Backend Developer',
-    technologies: ['.NET Core', '.NET Framework', 'Optimizely (EpiServer)', 'Vue 3', 'TailwindCSS', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-    overview: 'Educational system with the goal and purpose of providing a Christian distance learning (homeschooling) program for students in kindergarten, elementary and high school.',
-    challenge: 'Develop a complete educational platform that could offer quality distance learning content, aligned with Christian values, for students from kindergarten through high school.',
-    solution: 'We created a comprehensive system with modules for educational content management, student progress tracking, teacher-student interaction tools, and personalized learning resources.',
-    results: 'The platform allowed thousands of families to access quality education at home, with a 45% increase in student retention and improved academic results compared to previous years.',
-    testimonial: {
-      quote: "This system transformed our ability to provide quality education at home, perfectly combining Christian values with cutting-edge technology.",
-      author: "Educational Director",
-      company: "Abeka"
-    },
-    gallery: [
-      '/images/abeka.jpg',
-      '/images/degust-one.jpg',
-      '/images/neoassist.jpg'
-    ],
-    nextProject: 'degust-one'
-  },
-  {
-    id: 4,
-    slug: 'degust-one',
-    title: 'Degust One',
-    category: 'ADMINISTRATIVE SYSTEM',
-    heroImage: '/images/degust-one.jpg',
-    clientLogo: '/images/degust-one.jpg',
-    year: '2020-2021',
-    client: 'Linx Stone',
-    role: 'Frontend Developer',
-    technologies: ['.NET Core', '.NET Framework', 'Vue 2', 'Ant Design Vue', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-    overview: 'Advanced administrative system designed for efficient business management, including a customizable cash-front interface, streamlining operations and enhancing financial control.',
-    challenge: 'Develop an advanced administrative system that could efficiently manage business operations, with special focus on a customizable point-of-sale interface and enhanced financial control.',
-    solution: 'We implemented a complete enterprise solution with modules for inventory management, sales, financial and administrative functions, with a customizable interface for different types of businesses and an agile and intuitive point-of-sale system.',
-    results: 'The system provided a 30% reduction in sales processing time and a significant improvement in inventory and financial control accuracy, resulting in more informed and agile business decisions.',
-    testimonial: {
-      quote: "Degust One revolutionized our daily operations, simplifying complex processes and giving us complete visibility of our financial operations.",
-      author: "CEO",
-      company: "Linx Stone Client"
-    },
-    gallery: [
-      '/images/degust-one.jpg',
-      '/images/neoassist.jpg',
-      '/images/segweb-b4.jpg'
-    ],
-    nextProject: 'neoassist360'
-  },
-  {
-    id: 5,
-    slug: 'neoassist360',
-    title: 'NeoAssist360',
-    category: 'OMNICHANNEL SYSTEM',
-    heroImage: '/images/neoassist.jpg',
-    clientLogo: '/images/neoassist.jpg',
-    year: '2019-2020',
-    client: 'NeoAssist',
-    role: 'Frontend Developer',
-    technologies: ['Vue 2', 'Sass', 'Git', 'Git Labs', 'JIRA'],
-    overview: 'Omnichannel system that unifies relationship centers with the administrative environment, allowing for efficient management of diverse contact methods in a single platform.',
-    challenge: 'Create an omnichannel system that could unify relationship centers with administrative environments, allowing efficient management of various contact methods in a single platform.',
-    solution: 'We developed a unified platform that integrates chatbots, email, social media, phone, and other communication channels in a single interface, with advanced routing tools, automation, and ticket management.',
-    results: 'The system increased agent productivity by 40%, reduced average problem resolution time by 35%, and significantly improved end-customer satisfaction, as measured by NPS.',
-    testimonial: {
-      quote: "NeoAssist360 transformed our ability to manage customer interactions, providing a truly 360-degree view of each relationship.",
-      author: "Operations Director",
-      company: "NeoAssist Client"
-    },
-    gallery: [
-      '/images/neoassist.jpg',
-      '/images/segweb-b4.jpg',
-      '/images/channels-hub.jpg'
-    ],
-    nextProject: 'segweb'
-  },
-  {
-    id: 6,
-    slug: 'segweb',
-    title: 'Segweb B4',
-    category: 'INSURANCE REGULATION SYSTEM',
-    heroImage: '/images/segweb-b4.jpg',
-    clientLogo: '/images/segweb-b4.jpg',
-    year: '2018-2019',
-    client: 'Zeon Solutions',
-    role: 'Web Developer',
-    technologies: ['.NET Framework', 'jQuery', 'Bootstrap 4', 'Microsoft SQL Server', 'Git', 'Trello'],
-    overview: 'Comprehensive regulation system for managing claims in residential, commercial, industrial, condominium, and large-scale risk sectors, providing efficient resolution and streamlined processes.',
-    challenge: 'Create a robust system to manage complex insurance claims across multiple sectors, ensuring accurate tracking, efficient processing, and clear communication among all stakeholders.',
-    solution: 'We developed a comprehensive regulation system with intuitive workflows, detailed reporting capabilities, and customizable interfaces for different types of claims, making the entire process more transparent and efficient.',
-    results: 'The implementation resulted in a significant reduction in claim processing time, improved accuracy in assessment, and enhanced customer satisfaction due to quicker resolution of insurance claims.',
-    testimonial: {
-      quote: "Segweb B4 has completely transformed how we handle insurance claims, bringing unprecedented efficiency and accuracy to our processes.",
-      author: "Operations Director",
-      company: "Insurance Partner"
-    },
-    gallery: [
-      '/images/segweb-b4.jpg',
-      '/images/channels-hub.jpg',
-      '/images/edirectory.jpg'
-    ],
-    nextProject: 'edirectory'
-  },
-  {
-    id: 7,
-    slug: 'edirectory',
-    title: 'eDirectory',
-    category: 'DIRECTORY PLATFORM',
-    heroImage: '/images/edirectory.jpg',
-    clientLogo: '/images/edirectory.jpg',
-    year: '2017-2018',
-    client: 'Arca Solutions',
-    role: 'Customer Success / Developer',
-    technologies: ['PHP', 'Symfony', 'cPanel', 'Live Chat', 'Salesforce'],
-    overview: 'A versatile platform designed to create comprehensive business directories, local guides and classified portals that help companies and organizations build robust online directories and generate revenue through advertising and premium listings.',
-    challenge: 'Develop a flexible and scalable platform that could support multiple types of directories while allowing customization to meet the specific needs of different businesses and markets worldwide.',
-    solution: 'We created a feature-rich directory system with customizable listing types, advanced search functionality, monetization options, and responsive design to deliver a seamless experience across all devices.',
-    results: 'The platform has been successfully implemented by businesses worldwide, generating significant revenue through premium listings and advertisements while providing valuable resources for users searching for local businesses and services.',
-    testimonial: {
-      quote: "eDirectory provided us with the perfect solution to create our business directory, offering both flexibility and powerful monetization options.",
-      author: "Marketing Director",
-      company: "Global Directory Client"
-    },
-    gallery: [
-      '/images/edirectory.jpg',
-      '/images/ptrf.jpg',
-      '/images/neoassist.jpg'
-    ],
-    nextProject: 'ptrf'
-  },
-  {
-    id: 8,
-    slug: 'ptrf',
-    title: 'PTRF',
-    category: 'FINANCIAL RESOURCE SYSTEM',
-    heroImage: '/images/ptrf.jpg',
-    clientLogo: '/images/ptrf.jpg',
-    year: '2016',
-    client: 'MStech',
-    role: 'Web Developer Intern',
-    technologies: ['.NET Framework', 'Angular', 'Bootstrap 4', 'JIRA'],
-    overview: 'Financial resources transfer system dedicated and administered by educational units in São Paulo and Rio Grande do Sul, designed to streamline the process of transferring funds within the educational sector.',
-    challenge: 'Create an efficient system to manage and track the flow of financial resources between educational institutions, ensuring transparency, accuracy, and compliance with government regulations.',
-    solution: 'We developed a comprehensive solution with modules for budget allocation, fund transfer tracking, expense reporting, and statistical analysis to provide complete visibility into the financial processes of educational institutions.',
-    results: 'The system was successfully implemented in government schools across São Paulo and Rio Grande do Sul, resulting in improved efficiency and accuracy in managing financial resource transfers.',
-    testimonial: {
-      quote: "PTRF has revolutionized how we manage educational funding, providing unprecedented transparency and efficiency in our financial operations.",
-      author: "Educational Administrator",
-      company: "São Paulo State Education Department"
-    },
-    gallery: [
-      '/images/ptrf.jpg',
-      '/images/segweb-b4.jpg',
-      '/images/channels-hub.jpg'
-    ],
-    nextProject: 'channels-hub'
-  },
-];
+// Importar o composable de projetos para usar os dados centralizados
+import { useProjects } from '@/composables/useProjects';
+
+// Obter a referência ao composable
+const { getProjectBySlug, getNextProject } = useProjects();
 
 const route = useRoute();
 const currentSlug = route.params.slug;
+// Obter o projeto atual através do slug da rota
 const project = computed(() => {
-  return projects.find(p => p.slug === currentSlug) || null;
+  return getProjectBySlug(currentSlug) || null;
 });
 
 if (!project.value) {
@@ -259,8 +47,9 @@ onMounted(() => {
   }
 });
 
+// Obter o próximo projeto usando a função do composable
 const nextProject = computed(() => {
-  return projects.find(p => p.slug === project.value.nextProject) || projects[0];
+  return getNextProject(currentSlug);
 });
 
 const scrollToSection = (sectionId) => {
@@ -319,9 +108,15 @@ const scrollToSection = (sectionId) => {
           </div>
 
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10 lg:items-start">
-            <div class="lg:col-span-3 opacity-0 animate-fade-in-up delay-200">
-              <div class="rounded-lg overflow-hidden shadow-lg w-full h-full">
-                <NuxtImg :src="project.heroImage" :alt="project.title" class="w-full object-cover aspect-[16/10]" />
+            <div class="lg:col-span-3 opacity-0 animate-fade-in-up delay-200">              <div class="rounded-lg overflow-hidden shadow-lg w-full h-full">
+                <NuxtImg 
+                  :src="project.heroImage" 
+                  :alt="project.title" 
+                  class="w-full object-cover aspect-[16/10]"
+                  format="webp"
+                  quality="90"
+                  loading="eager"
+                  placeholder />
               </div>
             </div>
 
@@ -396,8 +191,9 @@ const scrollToSection = (sectionId) => {
                           class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">Results</a>
                       </li>
                       <li>
-                        <a href="#gallery" @click.prevent="scrollToSection('gallery')"
-                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">Gallery</a>
+                        <a href="#achievements" @click.prevent="scrollToSection('achievements')"
+                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">Key
+                          Achievements</a>
                       </li>
                     </ul>
                   </div>
@@ -415,19 +211,28 @@ const scrollToSection = (sectionId) => {
                 <h2 class="heading-3 mb-6">The Solution</h2>
                 <p class="body text-secondary mb-6">{{ project.solution }}</p>
               </div>
-
               <div id="results" class="mb-16 opacity-0 animate-fade-in-up delay-900">
                 <h2 class="heading-3 mb-6">Results</h2>
                 <p class="body text-secondary mb-12">{{ project.results }}</p>
               </div>
-
-              <div id="gallery" class="my-20 opacity-0 animate-fade-in-up delay-1100">
-                <h2 class="heading-3 mb-8">Project Gallery</h2>
+              <div id="achievements" class="my-20 opacity-0 animate-fade-in-up delay-1100">
+                <h2 class="heading-3 mb-8">Key Achievements</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div v-for="(image, index) in project.gallery" :key="index"
-                    class="rounded-lg overflow-hidden shadow-md transform hover:scale-[1.02] transition-all duration-500">
-                    <NuxtImg :src="image" :alt="`${project.title} - Image ${index + 1}`"
-                      class="w-full h-auto object-cover aspect-[4/3]" />
+                  <div v-for="(achievement, index) in project.achievements" :key="index"
+                    class="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="flex items-start">
+                      <div
+                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4 flex-shrink-0 shadow-sm border border-gray-100">
+                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd"
+                            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"></path>
+                        </svg>
+                      </div>
+                      <h3 class="font-medium text-lg text-primary">{{ achievement.title }}</h3>
+                    </div>
+                    <p class="text-secondary ml-16">{{ achievement.description }}</p>
                   </div>
                 </div>
               </div>
@@ -446,9 +251,14 @@ const scrollToSection = (sectionId) => {
           </div>
 
           <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
-            <NuxtLink :to="`/portfolio/${nextProject.slug}`" class="block relative">
-              <div class="relative w-full aspect-[21/9] overflow-hidden">
-                <NuxtImg :src="nextProject.heroImage" :alt="nextProject.title"
+            <NuxtLink :to="`/portfolio/${nextProject.slug}`" class="block relative">              <div class="relative w-full aspect-[21/9] overflow-hidden">
+                <NuxtImg 
+                  :src="nextProject.heroImage" 
+                  :alt="nextProject.title"
+                  format="webp"
+                  quality="90"
+                  loading="lazy"
+                  placeholder
                   class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300"></div>
               </div>
