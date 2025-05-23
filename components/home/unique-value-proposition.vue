@@ -68,7 +68,7 @@ onMounted(() => {
   <section class="w-full py-12 bg-white overflow-hidden opacity-0 animate-fade-in-slow">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section title -->
-      <div class="text-center mb-20 mt-8 animate-on-scroll opacity-0 transition-opacity duration-700 delay-300">
+      <div class="text-center mb-20 mt-8 py-16 animate-on-scroll opacity-0 transition-opacity duration-700 delay-300">
         <h2 class="heading-2 mb-6">How I transform <span class="text-primary">ideas</span> into <span
             class="text-primary">digital experiences</span></h2>
         <p class="subtitle max-w-3xl mx-auto">
@@ -184,10 +184,10 @@ onMounted(() => {
                 {{ project.title }}
               </h4>
               <div
-                class="flex items-center mt-4 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+                class="flex items-center mt-4 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[transform,opacity] duration-500 ease-out">
                 <span class="button-text !text-white font-semibold">View details</span>
                 <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg"
-                  class="ml-2 transition-all duration-500 ease-out">
+                  class="ml-2 transition-transform duration-500 ease-out group-hover:translate-x-1">
                   <path d="M19 4L15 1M19 4L15 7M19 4L1 4" stroke="white" stroke-width="1.5" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>

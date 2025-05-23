@@ -55,7 +55,7 @@ onMounted(() => {
             <p class="text-base leading-relaxed text-secondary max-w-[540px]">
               Hi! I'm Christian.
               <span
-                class="font-code bg-black/[0.03] px-3 py-1 rounded text-primary font-medium tracking-wide whitespace-nowrap inline-block transition-all duration-300 hover:bg-black/[0.06] hover:-translate-y-[1px]"><span
+                class="font-code bg-black/[0.03] px-3 py-1 rounded text-primary font-medium tracking-wide whitespace-nowrap inline-block hover:bg-black/[0.06] transition-all duration-300 ease-in-out hover:scale-105 transform-gpu"><span
                   class="text-primary font-semibold">&lt;</span>
                 Digital Designer
                 <span class="text-primary font-semibold">/&gt;</span>
@@ -98,12 +98,6 @@ onMounted(() => {
               class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body">
               LinkedIn
             </a>
-            <span class="text-gray-400">/</span>
-            <a href="https://www.instagram.com/christian.chiavelli/" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body">
-              Instagram
-            </a>
-            <span class="text-gray-400">/</span>
             <a href="mailto:chiavellidev@gmail.com"
               class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body">
               chiavellidev@gmail.com

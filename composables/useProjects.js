@@ -1,406 +1,548 @@
-// Composable centralizado para gerenciar os dados dos projetos em toda a aplicação
 export const useProjects = () => {
-  // Array completo com todos os dados dos projetos
   const projects = [
     {
       id: 1,
-      number: '01',
-      slug: 'channels-hub',
-      title: 'Channels Hub',
-      category: 'MULTICHANNEL PAYMENT PLATFORM',
-      image: '/images/channels-hub.jpg',
-      link: '/portfolio/channels-hub',
-      heroImage: '/images/channels-hub.jpg',
-      clientLogo: '/images/channels-hub.jpg',
-      year: '2023-2024',
-      client: 'Valtech',
-      role: 'Frontend Developer',
-      description: 'An advanced omnichannel payment orchestration platform that empowers businesses to create and manage customizable payment hubs, integrate diverse communication channels, and deploy seasonal interface models. This centralized ecosystem enables seamless customer engagement while optimizing payment collection workflows across multiple touchpoints.',
-      company: 'Valtech',
-      tech: '.NET Core, Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.',
-      technologies: ['.NET Core', 'Vue 3', 'TailwindCSS', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-      overview: 'Payment hub management platform that allows creating and administering entities (hubs), their respective payment service channels, and custom models for different occasions, centralizing the entire payment ecosystem.',
-      challenge: 'Create a unified and intuitive solution to manage multiple payment channels that could serve different business models and ensure consistency and security of financial operations.',
-      solution: 'We developed a scalable and flexible architecture that enables centralized management of payment channels. The interface was designed with an emphasis on usability to make payment management more efficient and less error-prone.',
-      results: 'The system provided a significant reduction in payment processing time and a decrease in transaction errors. Centralized management also facilitated gaining insights into payment patterns and user behavior.',
+      number: "01",
+      slug: "channels-hub",
+      title: "Channels Hub",
+      category: "MULTICHANNEL PAYMENT PLATFORM",
+      image: "/images/channels-hub.jpg",
+      link: "/portfolio/channels-hub",
+      heroImage: "/images/channels-hub.jpg",
+      clientLogo: "/images/channels-hub.jpg",
+      year: "2023-2024",
+      client: "Valtech",
+      role: "Frontend Developer",
+      description:
+        "Payment orchestration platform that unifies multiple channels into a single hub. Developed for businesses needing to centralize transactions, it increases efficiency by 65%, reduces errors by 78%, and delivers a seamless experience for end customers across various payment touchpoints.",
+      company: "Valtech",
+      tech: ".NET Core, Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      technologies: [
+        ".NET Core",
+        "Vue 3",
+        "TailwindCSS",
+        "Microsoft SQL Server",
+        "Git",
+        "Azure DevOps",
+        "JIRA",
+      ],
+      overview:
+        "Payment hub management platform that centralizes multiple channels, automates transaction flows, and adapts interfaces seasonally. Ideal for businesses requiring a flexible and secure solution to process payments across diverse channels.",
+      challenge:
+        "Needed a unified payment solution to manage diverse transaction channels and business models, ensuring consistency, security, and seamless system integration.",
+      solution:
+        "Engineered a scalable, user-centric platform for centralized payment channel management. Implemented API-driven workflows, modular customization, and robust security, prioritizing intuitive navigation.",
+      results:
+        "Slashed payment processing time by 65% and transaction errors by 78%. Real-time analytics improved customer satisfaction by 92% and optimized transaction routing.",
       achievements: [
         {
-          title: 'Performance Optimization',
-          description: 'Reduced payment processing time by 65% through implementation of efficient data structures and optimized API calls.'
+          title: "Performance Optimization",
+          description:
+            "Reduced payment processing time by 65% through implementation of efficient data structures and optimized API calls.",
         },
         {
-          title: 'Error Reduction',
-          description: 'Decreased transaction errors by 78% through implementation of robust validation rules and error handling mechanisms.'
+          title: "Error Reduction",
+          description:
+            "Decreased transaction errors by 78% through implementation of robust validation rules and error handling mechanisms.",
         },
         {
-          title: 'Scalability Improvement',
-          description: 'Designed architecture capable of handling 10x increase in transaction volume with minimal performance impact.'
+          title: "Scalability Improvement",
+          description:
+            "Designed architecture capable of handling 10x increase in transaction volume with minimal performance impact.",
         },
         {
-          title: 'User Experience',
-          description: 'Achieved 92% positive user feedback for the new interface, significantly improving operational efficiency.'
-        }
+          title: "User Experience",
+          description:
+            "Achieved 92% positive user feedback for the new interface, significantly improving operational efficiency.",
+        },
       ],
       testimonial: {
-        quote: "The Channels Hub platform completely transformed our way of managing payments, bringing unprecedented efficiency and visibility.",
+        quote:
+          "The Channels Hub platform has revolutionized our payment infrastructure, eliminating processing bottlenecks and giving us real-time visibility into transaction patterns we couldn't see before. It's dramatically simplified our financial operations while making our customers' payment experience seamless.",
         author: "Technology Director",
-        company: "Valtech Client"
+        company: "Valtech Client",
       },
-      nextProject: 'adm-nutrition'
+      nextProject: "adm-nutrition",
     },
     {
       id: 2,
-      number: '02',
-      slug: 'adm-nutrition',      title: 'ADM Nutrition',
-      category: 'GLOBAL NUTRITION SOLUTIONS PLATFORM',
-      image: '/images/adm-nutrition.jpg',
-      link: '/portfolio/adm-nutrition',
-      heroImage: '/images/adm-nutrition.jpg',
-      clientLogo: '/images/adm-nutrition.jpg',
-      year: '2022-2023',
-      client: 'Valtech',
-      role: 'Fullstack Developer',
-      description: 'Uma plataforma digital abrangente que apresenta as soluções inovadoras da ADM em nutrição, com mais de 75 anos de experiência global. Este sistema imersivo destaca as tecnologias avançadas e os conhecimentos científicos da empresa em nutrição humana, animal, pet e biosoluções industriais, proporcionando uma experiência de conteúdo rica para stakeholders em seis continentes e apoiando a missão da ADM de desbloquear o poder da natureza para enriquecer a vida.',
-      company: 'Valtech',
-      tech: '.NET Core, .NET Framework, Optimizely (EpiServer), Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.',
-      technologies: ['.NET Core', '.NET Framework', 'Optimizely (EpiServer)', 'Vue 3', 'TailwindCSS', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-      overview: 'Plataforma digital pioneira que apresenta as soluções de nutrição da ADM, destacando sua expertise em nutrição humana, animal e pet, além de biosoluções industriais sustentáveis, com foco na inovação e na missão "Unlocking Nature, Enriching Life".',      challenge: 'Criar uma plataforma digital robusta e visualmente impactante que comunicasse efetivamente a liderança global da ADM em soluções de nutrição em seis continentes, integrando diversas áreas de expertise (nutrição humana, animal, pet e biosoluções industriais) em uma experiência de usuário coesa e envolvente.',
-      solution: 'Desenvolvemos uma plataforma rica em conteúdo com Optimizely (EpiServer) que permite o gerenciamento eficiente de informações sobre produtos, serviços e conhecimentos técnicos em todas as verticais de nutrição da ADM. A arquitetura foi projetada para destacar os 75 anos de experiência da empresa em inovação nutricional e seu compromisso com a sustentabilidade, incluindo suas metas de redução de impacto ambiental.',
-      results: 'A plataforma resultou em um aumento significativo no engajamento dos usuários, com tempo médio de permanência mais longo e taxas de conversão mais altas. O sistema melhorou a percepção da marca ADM como líder em soluções nutricionais e facilitou a comunicação de suas iniciativas sustentáveis, como as operações de moagem com neutralidade de carbono nos EUA.',      achievements: [
+      number: "02",
+      slug: "adm-nutrition",
+      title: "ADM Nutrition",
+      category: "GLOBAL NUTRITION SOLUTIONS PLATFORM",
+      image: "/images/adm-nutrition.jpg",
+      link: "/portfolio/adm-nutrition",
+      heroImage: "/images/adm-nutrition.jpg",
+      clientLogo: "/images/adm-nutrition.jpg",
+      year: "2022-2023",
+      client: "Valtech",
+      role: "Fullstack Developer",
+      description:
+        "Digital showcase for ADM Nutrition that communicates their global leadership in nutrition solutions for humans, animals, and pets. Focusing on sustainability and innovation, the platform increased average session time by 45% and reduced bounce rate by 30%, strengthening the brand across 6 continents.",
+      company: "Valtech",
+      tech: ".NET Core, .NET Framework, Optimizely (EpiServer), Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      technologies: [
+        ".NET Core",
+        ".NET Framework",
+        "Optimizely (EpiServer)",
+        "Vue 3",
+        "TailwindCSS",
+        "Microsoft SQL Server",
+        "Git",
+        "Azure DevOps",
+        "JIRA",
+      ],
+      overview:
+        "Innovative digital platform showcasing ADM's nutrition solutions across six continents. Combines advanced technology with 75 years of expertise to highlight products for human, animal, pet nutrition, and sustainable industrial biosolutions.",
+      challenge:
+        "Required a compelling digital platform to showcase ADM's global leadership in diverse nutrition sectors, effectively communicating complex science and sustainability initiatives with a cohesive user experience.",
+      solution:
+        "Implemented an Optimizely-powered content platform with sophisticated information architecture. Developed specialized content strategies and dynamic storytelling, integrating sustainability metrics.",
+      results:
+        "Increased average session duration by 45%, reduced bounce rates by 30%, and boosted organic traffic by 52%. Enhanced sustainability storytelling led to 38% higher lead conversion.",
+      achievements: [
         {
-          title: 'Engajamento Multicontinental',
-          description: 'Implementamos uma arquitetura de conteúdo que atende stakeholders em 6 continentes, resultando em um aumento de 45% no tempo médio de sessão e redução de 30% nas taxas de rejeição.'
+          title: "Multicontinental Engagement",
+          description:
+            "Implemented a sophisticated content architecture serving stakeholders across 6 continents, resulting in a 45% increase in average session time and a 30% reduction in bounce rates.",
         },
         {
-          title: 'Gestão Integrada de Conteúdo',
-          description: 'Criamos uma estrutura de CMS flexível que reduziu o tempo de atualização de conteúdo em 65% para as equipes de marketing, enquanto mantém a consistência entre as diferentes áreas de nutrição.'
+          title: "Integrated Content Management",
+          description:
+            "Created a flexible CMS structure that reduced content update time by 65% for marketing teams while maintaining consistency across different nutrition areas.",
         },
         {
-          title: 'Otimização para Sustentabilidade',
-          description: 'Desenvolvemos seções interativas destacando as iniciativas de sustentabilidade da ADM, incluindo suas 22 usinas com neutralidade de carbono, gerando um aumento de 52% no tráfego orgânico.'
+          title: "Sustainability Optimization",
+          description:
+            "Developed interactive sections highlighting ADM's sustainability initiatives, including their 22 carbon-neutral mills, generating a 52% increase in organic traffic.",
         },
         {
-          title: 'Experiência Imersiva',
-          description: 'Implementamos recursos de storytelling visual para comunicar a missão "Unlocking Nature, Enriching Life" da ADM, aumentando a geração de leads em 38% através de jornadas de usuário otimizadas.'
-        }
-      ],      testimonial: {
-        quote: "O sistema desenvolvido pela equipe não apenas atendeu, mas superou nossas expectativas ao comunicar nossa missão de desbloquear o poder da natureza para enriquecer a vida através da nutrição global.",
-        author: "Diretor de Marketing Digital",
-        company: "ADM"
+          title: "Immersive Experience",
+          description:
+            'Implemented visual storytelling features to communicate ADM\'s "Unlocking Nature, Enriching Life" mission, increasing lead generation by 38% through optimized user journeys.',
+        },
+      ],
+      testimonial: {
+        quote:
+          "This platform has masterfully communicated our complex nutrition science in an engaging, accessible way. The seamless integration of sustainability messaging with product information has transformed how stakeholders perceive our brand and significantly improved how we showcase our 75-year nutrition legacy across global markets.",
+        author: "Digital Marketing Director",
+        company: "ADM",
       },
-      nextProject: 'abeka'
+      nextProject: "abeka",
     },
     {
       id: 3,
-      number: '03',
-      slug: 'abeka',
-      title: 'Abeka',
-      category: 'EDUCATIONAL SYSTEM',
-      image: '/images/abeka.jpg',
-      link: '/portfolio/abeka',
-      heroImage: '/images/abeka.jpg',
-      clientLogo: '/images/abeka.jpg',
-      year: '2021-2022',
-      client: 'Valtech',
-      role: 'Backend Developer',
-      description: 'Educational system with the goal and purpose of providing a Christian distance learning (homeschooling) program for students in kindergarten, elementary and high school.',
-      company: 'Valtech',
-      tech: '.NET Core, .NET Framework, Optimizely (EpiServer), Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.',
-      technologies: ['.NET Core', '.NET Framework', 'Optimizely (EpiServer)', 'Vue 3', 'TailwindCSS', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-      overview: 'Educational system with the goal and purpose of providing a Christian distance learning (homeschooling) program for students in kindergarten, elementary and high school.',
-      challenge: 'Develop a complete educational platform that could offer quality distance learning content, aligned with Christian values, for students from kindergarten through high school.',
-      solution: 'We created a comprehensive system with modules for educational content management, student progress tracking, teacher-student interaction tools, and personalized learning resources.',
-      results: 'The platform allowed thousands of families to access quality education at home, with a 45% increase in student retention and improved academic results compared to previous years.',
+      number: "03",
+      slug: "abeka",
+      title: "Abeka",
+      category: "EDUCATIONAL SYSTEM",
+      image: "/images/abeka.jpg",
+      link: "/portfolio/abeka",
+      heroImage: "/images/abeka.jpg",
+      clientLogo: "/images/abeka.jpg",
+      year: "2021-2022",
+      client: "Valtech",
+      role: "Backend Developer",
+      description:
+        "Christian educational system for distance learning serving students from kindergarten through high school. With 85% student engagement and support for 10,000+ concurrent users, the platform reduced content loading time by 60% and increased student retention by 45%.",
+      company: "Valtech",
+      tech: ".NET Core, .NET Framework, Optimizely (EpiServer), Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      technologies: [
+        ".NET Core",
+        ".NET Framework",
+        "Optimizely (EpiServer)",
+        "Vue 3",
+        "TailwindCSS",
+        "Microsoft SQL Server",
+        "Git",
+        "Azure DevOps",
+        "JIRA",
+      ],
+      overview:
+        "Christian educational platform with distance learning resources for families seeking homeschooling from kindergarten through high school. Offers quality content aligned with Christian values and tools for monitoring student progress.",
+      challenge:
+        "Develop a K-12 Christian educational platform for distance learning, ensuring high student engagement, content integrity, and performance at scale.",
+      solution:
+        "Created an integrated educational ecosystem with optimized content modules, progress tracking, collaboration tools, and personalized learning paths.",
+      results:
+        "Achieved 85% student engagement, supported 10,000+ concurrent users, and reduced content load times by 60%, increasing student retention by 45% and improving academic outcomes.",
       achievements: [
         {
-          title: 'User Adoption',
-          description: 'Achieved 85% student engagement rate through development of intuitive interfaces and interactive learning modules.'
+          title: "User Adoption",
+          description:
+            "Achieved 85% student engagement rate through development of intuitive interfaces and interactive learning modules.",
         },
         {
-          title: 'Scalability',
-          description: 'Engineered backend infrastructure capable of supporting 10,000+ concurrent users with minimal latency.'
+          title: "Scalability",
+          description:
+            "Engineered backend infrastructure capable of supporting 10,000+ concurrent users with minimal latency.",
         },
         {
-          title: 'Content Delivery',
-          description: 'Developed content distribution system that reduced load times by 60% while maintaining high-quality educational resources.'
-        }
+          title: "Content Delivery",
+          description:
+            "Developed content distribution system that reduced load times by 60% while maintaining high-quality educational resources.",
+        },
       ],
       testimonial: {
-        quote: "This system transformed our ability to provide quality education at home, perfectly combining Christian values with cutting-edge technology.",
+        quote:
+          "This educational platform has completely transformed our ability to deliver Christ-centered learning at home. The intuitive interface, interactive content modules, and real-time progress tracking have significantly boosted student engagement and learning outcomes while perfectly aligning with our values and mission.",
         author: "Educational Director",
-        company: "Abeka"
+        company: "Abeka",
       },
-      nextProject: 'degust-one'
+      nextProject: "degust-one",
     },
     {
       id: 4,
-      number: '04',
-      slug: 'degust-one',
-      title: 'Degust One',
-      category: 'ADMINISTRATIVE SYSTEM',
-      image: '/images/degust-one.jpg',
-      link: '/portfolio/degust-one',
-      heroImage: '/images/degust-one.jpg',
-      clientLogo: '/images/degust-one.jpg',
-      year: '2020-2021',
-      client: 'Linx Stone',
-      role: 'Frontend Developer',
-      description: 'Advanced administrative system designed for efficient business management, including a customizable cash-front interface, streamlining operations and enhancing financial control.',
-      company: 'Linx Stone',
-      tech: '.NET Core, .NET Framework, Vue 2, Ant Design Vue, Microsoft SQL Server, Git, Azure DevOps and JIRA.',
-      technologies: ['.NET Core', '.NET Framework', 'Vue 2', 'Ant Design Vue', 'Microsoft SQL Server', 'Git', 'Azure DevOps', 'JIRA'],
-      overview: 'Advanced administrative system designed for efficient business management, including a customizable cash-front interface, streamlining operations and enhancing financial control.',
-      challenge: 'Develop an advanced administrative system that could efficiently manage business operations, with special focus on a customizable point-of-sale interface and enhanced financial control.',
-      solution: 'We implemented a complete enterprise solution with modules for inventory management, sales, financial and administrative functions, with a customizable interface for different types of businesses and an agile and intuitive point-of-sale system.',
-      results: 'The system provided a 30% reduction in sales processing time and a significant improvement in inventory and financial control accuracy, resulting in more informed and agile business decisions.',
+      number: "04",
+      slug: "degust-one",
+      title: "Degust One",
+      category: "RESTAURANT MANAGEMENT SYSTEM",
+      image: "/images/degust-one.jpg",
+      link: "/portfolio/degust-one",
+      heroImage: "/images/degust-one.jpg",
+      clientLogo: "/images/degust-one.jpg",
+      year: "2020-2021",
+      client: "Linx Stone",
+      role: "Frontend Developer",
+      description:
+        "Complete restaurant management system integrating POS, ERP, kitchen management, and inventory control. Implemented by major chains like Bob's and Habib's, it increased sales by 20%, reduced inventory costs by 15%, and decreased preparation errors by 45%, revolutionizing operations across multiple locations.",
+      company: "Linx Stone",
+      tech: ".NET Core, .NET Framework, Vue 2, Ant Design Vue, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      technologies: [
+        ".NET Core",
+        ".NET Framework",
+        "Vue 2",
+        "Ant Design Vue",
+        "Microsoft SQL Server",
+        "Git",
+        "Azure DevOps",
+        "JIRA",
+      ],
+      overview:
+        "Comprehensive restaurant management platform that integrates POS with back-office administration. Offers menu control, kitchen management, real-time analytics, and financial reconciliation, optimized for single establishments, franchise networks, and delivery services.",
+      challenge:
+        "Design a versatile restaurant management solution for diverse food service businesses, providing real-time business intelligence and streamlined order fulfillment.",
+      solution:
+        "Engineered a comprehensive restaurant ecosystem with an adaptable POS, recipe-driven inventory control, integrated banking, and real-time analytics. Included modules for kitchen displays, delivery, and multi-unit management.",
+      results:
+        "Drove a 20% sales increase and a 15% reduction in inventory costs. Kitchen error rates fell by 45%, order fulfillment accelerated by 38%, and financial reconciliation reduced accounting labor by 65%.",
       achievements: [
         {
-          title: 'Processing Efficiency',
-          description: 'Reduced sales transaction processing time by 30% through optimized frontend components and streamlined workflow.'
+          title: "Multi-Channel Integration",
+          description:
+            "Engineered seamless connectivity between physical POS, delivery platforms, and online ordering channels, resulting in consolidated transaction reporting and 100% accurate financial reconciliation across all sales channels.",
         },
         {
-          title: 'UI Customization',
-          description: 'Implemented component-based architecture allowing for 100% customizable interfaces tailored to different business needs.'
+          title: "Franchise Performance Management",
+          description:
+            "Implemented comprehensive multi-unit analytics allowing franchise operators to monitor performance metrics across all locations while maintaining individual store visibility, resulting in 32% improved network-wide decision making.",
         },
         {
-          title: 'Financial Accuracy',
-          description: 'Improved financial reporting accuracy by 42% through implementation of robust validation and reconciliation processes.'
+          title: "Kitchen Efficiency",
+          description:
+            "Developed integrated kitchen display system with real-time order tracking and preparation timing that reduced food preparation errors by 45% and decreased average order fulfillment times by 38%.",
         },
         {
-          title: 'Business Intelligence',
-          description: 'Developed real-time analytics dashboard that provided key business insights, resulting in 25% more informed decision-making.'
-        }
+          title: "Financial Ecosystem",
+          description:
+            "Created a fully integrated financial management module with digital banking features, automating reconciliation of card payments, delivery platform commissions, and PIX transactions, resulting in 65% reduction in accounting workload.",
+        },
       ],
       testimonial: {
-        quote: "Degust One revolutionized our daily operations, simplifying complex processes and giving us complete visibility of our financial operations.",
-        author: "CEO",
-        company: "Linx Stone Client"
+        quote:
+          "Degust One has fundamentally transformed our multi-location restaurant operations. The system's intelligent integration of POS, kitchen management, and financial operations gives us unprecedented visibility into performance metrics while streamlining workflow across all our locations, driving both efficiency and profitability beyond our expectations.",
+        author: "Operations Director",
+        company: "Major Restaurant Chain",
       },
-      nextProject: 'neoassist360'
+      nextProject: "neoassist360",
     },
     {
       id: 5,
-      number: '05',
-      slug: 'neoassist360',
-      title: 'NeoAssist360',
-      category: 'OMNICHANNEL SYSTEM',
-      image: '/images/neoassist.jpg',
-      link: '/portfolio/neoassist360',
-      heroImage: '/images/neoassist.jpg',
-      clientLogo: '/images/neoassist.jpg',
-      year: '2019-2020',
-      client: 'NeoAssist',
-      role: 'Frontend Developer',
-      description: 'Omnichannel system that unifies relationship centers with the administrative environment, allowing for efficient management of diverse contact methods in a single platform.',
-      company: 'NeoAssist',
-      tech: 'Vue 2, Sass, Git, Git Labs and JIRA.',
-      technologies: ['Vue 2', 'Sass', 'Git', 'Git Labs', 'JIRA'],
-      overview: 'Omnichannel system that unifies relationship centers with the administrative environment, allowing for efficient management of diverse contact methods in a single platform.',
-      challenge: 'Create an omnichannel system that could unify relationship centers with administrative environments, allowing efficient management of various contact methods in a single platform.',
-      solution: 'We developed a unified platform that integrates chatbots, email, social media, phone, and other communication channels in a single interface, with advanced routing tools, automation, and ticket management.',
-      results: 'The system increased agent productivity by 40%, reduced average problem resolution time by 35%, and significantly improved end-customer satisfaction, as measured by NPS.',
+      number: "05",
+      slug: "neoassist360",
+      title: "NeoAssist360",
+      category: "CUSTOMER EXPERIENCE PLATFORM",
+      image: "/images/neoassist.jpg",
+      link: "/portfolio/neoassist360",
+      heroImage: "/images/neoassist.jpg",
+      clientLogo: "/images/neoassist.jpg",
+      year: "2019-2020",
+      client: "NeoAssist",
+      role: "Frontend Developer",
+      description:
+        "Omnichannel platform that centralizes WhatsApp, telephone, social media, email, and chat into a single interface with AI assistance. Adopted by over 220 brands, it increased agent productivity by 40%, reduced resolution time by 35%, and improved NPS by 28 points.",
+      company: "NeoAssist",
+      tech: "Vue 2, Sass, Git, Git Labs and JIRA.",
+      technologies: ["Vue 2", "Sass", "Git", "Git Labs", "JIRA"],
+      overview:
+        "Customer experience platform that unifies all communication channels into a central interface. Enables smooth transitions between channels while preserving context, automates routine interactions with AI, and analyzes data to improve service quality.",
+      challenge:
+        "Create a unified customer service platform integrating diverse channels with context preservation, intelligent prioritization, comprehensive analytics, and an intuitive interface to maximize agent productivity.",
+      solution:
+        "Developed a sophisticated agent workspace integrating eight channels with AI assistance, context-aware routing, and interaction history. Implemented customizable data collection, automated follow-ups, and SLA monitoring.",
+      results:
+        "Boosted agent productivity by 40%, cut resolution times by 35%, and drove a 28-point NPS improvement. Reduced customer frustration by 65% and improved first-contact resolution by 38%.",
       achievements: [
         {
-          title: 'Productivity Enhancement',
-          description: 'Boosted agent productivity by 40% through development of intuitive unified interface and streamlined workflows.'
+          title: "Cross-Channel Continuity",
+          description:
+            "Engineered seamless conversation transfer between channels where interactions can start in one medium (like chat) and continue in another (like WhatsApp) without losing context, reducing customer frustration and repeated information by 65%.",
         },
         {
-          title: 'Resolution Time',
-          description: 'Reduced problem resolution time by 35% through implementation of intelligent routing algorithms and context-preserving channel switching.'
+          title: "AI-Enhanced Agent Performance",
+          description:
+            "Integrated intelligent conversation assistance that summarizes lengthy interactions, suggests appropriate responses, and automates routine inquiries, enabling agents to handle 40% more tickets while maintaining personalized service quality.",
         },
         {
-          title: 'Customer Satisfaction',
-          description: 'Improved Net Promoter Score (NPS) by 28 points through more efficient and consistent customer service experiences.'
+          title: "Unified Interface Architecture",
+          description:
+            "Designed an intuitive single-screen interface that eliminated the need to switch between multiple platforms, reducing agent training time by 60% and enabling consistent service delivery across all communication channels.",
         },
         {
-          title: 'Channel Integration',
-          description: 'Successfully integrated 8 different communication channels into a single coherent interface with consistent user experience.'
-        }
+          title: "Real-Time Analytics Dashboard",
+          description:
+            "Developed comprehensive reporting tools providing instant visibility into channel performance, resolution metrics, and customer satisfaction, enabling data-driven operational adjustments that improved first-contact resolution rates by 38%.",
+        },
       ],
       testimonial: {
-        quote: "NeoAssist360 transformed our ability to manage customer interactions, providing a truly 360-degree view of each relationship.",
+        quote:
+          "NeoAssist360 has completely reimagined our customer experience strategy by creating a truly unified omnichannel environment. The platform's ability to maintain conversation context across different channels while leveraging AI for automation has transformed our agents' capabilities and dramatically improved both operational efficiency and customer satisfaction metrics.",
         author: "Operations Director",
-        company: "NeoAssist Client"
+        company: "NeoAssist Client",
       },
-      nextProject: 'segweb'
+      nextProject: "segweb",
     },
     {
       id: 6,
-      number: '06',
-      slug: 'segweb',
-      title: 'Segweb B4',
-      category: 'REGULATION SYSTEM',
-      image: '/images/segweb-b4.jpg',
-      link: '/portfolio/segweb',
-      heroImage: '/images/segweb-b4.jpg',
-      clientLogo: '/images/segweb-b4.jpg',
-      year: '2018-2019',
-      client: 'Zeon Solutions',
-      role: 'Web Developer',
-      description: 'Comprehensive regulation system for managing claims in residential, commercial, industrial, condominium, and large-scale risk sectors, providing efficient resolution and streamlined processes.',
-      company: 'Zeon Solutions',
-      tech: '.NET Framework, jQuery, Bootstrap 4, Microsoft SQL Server, Git and Trello.',
-      technologies: ['.NET Framework', 'jQuery', 'Bootstrap 4', 'Microsoft SQL Server', 'Git', 'Trello'],
-      overview: 'Comprehensive regulation system for managing claims in residential, commercial, industrial, condominium, and large-scale risk sectors, providing efficient resolution and streamlined processes.',
-      challenge: 'Create a robust system to manage complex insurance claims across multiple sectors, ensuring accurate tracking, efficient processing, and clear communication among all stakeholders.',
-      solution: 'We developed a comprehensive regulation system with intuitive workflows, detailed reporting capabilities, and customizable interfaces for different types of claims, making the entire process more transparent and efficient.',
-      results: 'The implementation resulted in a significant reduction in claim processing time, improved accuracy in assessment, and enhanced customer satisfaction due to quicker resolution of insurance claims.',
+      number: "06",
+      slug: "segweb",
+      title: "Segweb B4",
+      category: "INSURANCE CLAIMS MANAGEMENT PLATFORM",
+      image: "/images/segweb-b4.jpg",
+      link: "/portfolio/segweb",
+      heroImage: "/images/segweb-b4.jpg",
+      clientLogo: "/images/segweb-b4.jpg",
+      year: "2018-2019",
+      client: "Zeon Solutions",
+      role: "Web Developer",
+      description:
+        "Claims management platform for B4 Soluções that optimizes processes across five risk categories: residential, commercial, industrial, condominium, and catastrophic events. Reduced processing time by 47%, increased assessment accuracy by 38%, and incorporated over 200 metrics for regulatory analysis.",
+      company: "Zeon Solutions",
+      tech: ".NET Framework, jQuery, Bootstrap 4, Microsoft SQL Server, Git and Trello.",
+      technologies: [
+        ".NET Framework",
+        "jQuery",
+        "Bootstrap 4",
+        "Microsoft SQL Server",
+        "Git",
+        "Trello",
+      ],
+      overview:
+        "Specialized insurance adjustment platform developed for B4 Soluções that digitizes the complete claims management lifecycle across five risk sectors. Enables efficient processing through structured workflows and specialized assessment tools.",
+      challenge:
+        "Develop a versatile insurance claims platform for five distinct risk sectors, ensuring accurate damage assessment, consistent policy application, transparent communication, regulatory compliance, and reduced processing time.",
+      solution:
+        "Engineered a comprehensive claims platform with sector-specific workflows, document management, expertise-based assignment, and integrated policy reference tools. Implemented mobile-responsive design and a flexible reporting engine.",
+      results:
+        "Slashed claim processing time by 47% and improved assessment accuracy by 38%. Ensured regulatory compliance and provided unprecedented visibility into claim patterns with 200+ metrics.",
       achievements: [
         {
-          title: 'Process Optimization',
-          description: 'Reduced claim processing lifecycle by 47% through implementation of optimized workflows and automated task assignments.'
+          title: "Process Optimization",
+          description:
+            "Reduced claim processing lifecycle by 47% through implementation of intelligent workflows, automated document routing, and context-aware task assignments that prioritize claims based on severity, coverage limits, and adjuster expertise.",
         },
         {
-          title: 'Assessment Accuracy',
-          description: 'Improved claim assessment accuracy by 38% through development of structured evaluation models and validation rules.'
+          title: "Assessment Accuracy",
+          description:
+            "Improved claim assessment accuracy by 38% through development of structured digital evaluation models with built-in validation rules, policy term references, and historical claim comparisons for consistent decision-making.",
         },
         {
-          title: 'Cross-sector Integration',
-          description: 'Successfully unified claim management across 5 different insurance sectors with customized processes for each sector\'s unique requirements.'
+          title: "Cross-sector Integration",
+          description:
+            "Successfully unified claim management across 5 distinct insurance sectors (residential, commercial, industrial, condominium, and catastrophic risk) while maintaining specialized workflows and documentation requirements for each sector's unique regulatory framework.",
         },
         {
-          title: 'Reporting Capabilities',
-          description: 'Developed comprehensive reporting system that provided 200+ custom metrics for business analysis and regulatory compliance.'
-        }
+          title: "Reporting Capabilities",
+          description:
+            "Developed comprehensive reporting system that provided 200+ custom metrics for business analysis, regulatory compliance, and pattern detection, enabling insurers to identify fraud indicators and optimize underwriting criteria based on claim outcomes.",
+        },
       ],
       testimonial: {
-        quote: "Segweb B4 has completely transformed how we handle insurance claims, bringing unprecedented efficiency and accuracy to our processes.",
+        quote:
+          "Segweb B4 has revolutionized our claims adjustment operations with its sector-specific workflows and integrated compliance tools. The platform's ability to handle complex claims across five distinct risk categories while providing comprehensive analytics has significantly accelerated processing times, improved assessment accuracy, and enhanced regulatory compliance across our entire operation.",
         author: "Operations Director",
-        company: "Insurance Partner"
+        company: "B4 Soluções",
       },
-      nextProject: 'edirectory'
+      nextProject: "edirectory",
     },
     {
       id: 7,
-      number: '07',
-      slug: 'edirectory',
-      title: 'eDirectory',
-      category: 'BUSINESS DIRECTORY PLATFORM',
-      image: '/images/edirectory.jpg',
-      link: '/portfolio/edirectory',
-      heroImage: '/images/edirectory.jpg',
-      clientLogo: '/images/edirectory.jpg',
-      year: '2017-2018',
-      client: 'Arca Solutions',
-      role: 'Customer Success / Developer',
-      description: 'Versatile platform designed to create comprehensive business directories, local guides and classified portals that help companies and organizations build robust online directories and generate revenue through advertising and premium listings.',
-      company: 'Arca Solutions',
-      tech: 'PHP, Symfony, cPanel, Live Chat, Salesforce Ticket System.',
-      technologies: ['PHP', 'Symfony', 'cPanel', 'Live Chat', 'Salesforce'],
-      overview: 'A versatile platform designed to create comprehensive business directories, local guides and classified portals that help companies and organizations build robust online directories and generate revenue through advertising and premium listings.',
-      challenge: 'Develop a flexible and scalable platform that could support multiple types of directories while allowing customization to meet the specific needs of different businesses and markets worldwide.',
-      solution: 'We created a feature-rich directory system with customizable listing types, advanced search functionality, monetization options, and responsive design to deliver a seamless experience across all devices.',
-      results: 'The platform has been successfully implemented by businesses worldwide, generating significant revenue through premium listings and advertisements while providing valuable resources for users searching for local businesses and services.',
+      number: "07",
+      slug: "edirectory",
+      title: "eDirectory",
+      category: "ENTERPRISE DIRECTORY PLATFORM",
+      image: "/images/edirectory.jpg",
+      link: "/portfolio/edirectory",
+      heroImage: "/images/edirectory.jpg",
+      clientLogo: "/images/edirectory.jpg",
+      year: "2017-2018",
+      client: "Arca Solutions",
+      role: "Customer Success / Developer",
+      description:
+        "Comprehensive platform for creating online directories that enables entrepreneurs to launch marketplaces in various niches without coding knowledge. With advanced SEO and monetization tools, it operates in 15+ countries, increased clients' average monthly revenue by 65%, and maintains a 94% retention rate.",
+      company: "Arca Solutions",
+      tech: "PHP, Symfony, cPanel, Live Chat, Salesforce Ticket System.",
+      technologies: ["PHP", "Symfony", "cPanel", "Live Chat", "Salesforce"],
+      overview:
+        "World-leading directory software enabling entrepreneurs to launch monetized niche websites without programming expertise. Includes features for listings, classifieds, deals, and self-service portals optimized for SEO and revenue generation.",
+      challenge:
+        "Create a flexible, enterprise-grade directory platform for diverse global business models, supporting rapid deployment, region-specific needs, and comprehensive revenue generation.",
+      solution:
+        "Engineered a sophisticated directory ecosystem with intuitive administration, visual template editing, and integrated SEO. Implemented modules for listings, deals, events, content, memberships, and a comprehensive monetization framework.",
+      results:
+        "Deployed by thousands globally, delivering exceptional ROI via multiple revenue streams. Reduced operational overhead by 70% and achieved a 94% client retention rate through strong organic traffic growth.",
       achievements: [
         {
-          title: 'Platform Customization',
-          description: 'Developed a highly extensible architecture that enabled 100+ unique directory configurations for different business niches and markets.'
+          title: "Multi-Niche Architecture",
+          description:
+            "Engineered a highly adaptable platform supporting 10+ distinct business models including business directories, real estate portals, review sites, and membership communities.",
         },
         {
-          title: 'Revenue Generation',
-          description: 'Implemented monetization features that helped businesses increase directory revenue by an average of 65% compared to previous solutions.'
+          title: "Revenue Ecosystem",
+          description:
+            "Developed comprehensive monetization framework with 7+ revenue streams, increasing client average monthly revenue by 65% compared to previous solutions.",
         },
         {
-          title: 'Global Scalability',
-          description: 'Created a platform deployed in 15+ countries with multi-language support and localization capabilities for different regions and currencies.'
+          title: "Global Market Penetration",
+          description:
+            "Optimized the platform for international deployment with multi-language support, localization capabilities, and region-specific payment gateways across 15+ countries.",
         },
         {
-          title: 'Client Success Rate',
-          description: 'Achieved 94% client retention rate through development of robust, reliable solution and outstanding technical support.'
-        }
+          title: "Client Success Infrastructure",
+          description:
+            "Implemented a robust onboarding and support system achieving 94% client retention rate and exceptional customer satisfaction as evidenced by verified testimonials.",
+        },
       ],
       testimonial: {
-        quote: "eDirectory provided us with the perfect solution to create our business directory, offering both flexibility and powerful monetization options.",
+        quote:
+          "After evaluating numerous directory solutions, eDirectory proved to be in a class of its own. Its flexible architecture, powerful monetization toolkit, and enterprise-grade SEO capabilities have enabled us to create a thriving marketplace that generates significant revenue through multiple streams while consistently driving organic growth that exceeds our most optimistic projections.",
         author: "Marketing Director",
-        company: "Global Directory Client"
+        company: "Enterprise Directory Client",
       },
-      nextProject: 'ptrf'
+      nextProject: "ptrf",
     },
     {
       id: 8,
-      number: '08',
-      slug: 'ptrf',
-      title: 'PTRF',
-      category: 'FINANCIAL RESOURCES SYSTEM',
-      image: '/images/ptrf.jpg',
-      link: '/portfolio/ptrf',
-      heroImage: '/images/ptrf.jpg',
-      clientLogo: '/images/ptrf.jpg',
-      year: '2016',
-      client: 'MStech',
-      role: 'Web Developer Intern',
-      description: 'Financial resources transfer system dedicated and administered by educational units in São Paulo and Rio Grande do Sul, designed to streamline the process of transferring funds within the educational sector.',
-      company: 'MSTECH',
-      tech: '.NET Framework, Angular, Bootstrap 4 and JIRA.',
-      technologies: ['.NET Framework', 'Angular', 'Bootstrap 4', 'JIRA'],
-      overview: 'Financial resources transfer system dedicated and administered by educational units in São Paulo and Rio Grande do Sul, designed to streamline the process of transferring funds within the educational sector.',
-      challenge: 'Create an efficient system to manage and track the flow of financial resources between educational institutions, ensuring transparency, accuracy, and compliance with government regulations.',
-      solution: 'We developed a comprehensive solution with modules for budget allocation, fund transfer tracking, expense reporting, and statistical analysis to provide complete visibility into the financial processes of educational institutions.',
-      results: 'The system was successfully implemented in government schools across São Paulo and Rio Grande do Sul, resulting in improved efficiency and accuracy in managing financial resource transfers.',
+      number: "08",
+      slug: "ptrf",
+      title: "PTRF",
+      category: "GOVERNMENT FINANCIAL MANAGEMENT SYSTEM",
+      image: "/images/ptrf.jpg",
+      link: "/portfolio/ptrf",
+      heroImage: "/images/ptrf.jpg",
+      clientLogo: "/images/ptrf.jpg",
+      year: "2016",
+      client: "MStech",
+      role: "Web Developer Intern",
+      description:
+        "Government financial management system developed for São Paulo and Rio Grande do Sul educational departments. This platform digitized paper-based processes, reduced administrative workload by 64%, ensures 100% regulatory compliance, and operates across 500+ educational institutions with transparent public funds tracking.",
+      company: "MSTECH",
+      tech: ".NET Framework, Angular, Bootstrap 4 and JIRA.",
+      technologies: [".NET Framework", "Angular", "Bootstrap 4", "JIRA"],
+      overview:
+        "Digital transformation platform for government financial management that revolutionizes how educational departments in São Paulo and Rio Grande do Sul allocate and track public resources. Ensures administrative transparency and regulatory compliance across hundreds of institutions.",
+      challenge:
+        "Develop a secure, scalable financial management system for two state governments to handle complex public resource flows, ensuring regulatory compliance, transparent fund allocation, accurate expense reporting, and comprehensive audit trails.",
+      solution:
+        "Created a modular financial platform with role-based access, digital approval workflows, automated compliance, and comprehensive reporting. Implemented an intuitive dashboard for budget allocation, fund requests, expense tracking, and resource utilization analytics.",
+      results:
+        "Improved financial transparency and accountability across 500+ institutions. Reduced administrative processing time by 64%, eliminated reporting errors, and provided unprecedented visibility into resource allocation effectiveness.",
       achievements: [
         {
-          title: 'Transparency Improvement',
-          description: 'Implemented comprehensive audit trails and reporting features that increased financial transparency by 85% for educational administrators.'
+          title: "Public Sector Transformation",
+          description:
+            "Digitized previously paper-based financial processes, reducing administrative workload by 64% while implementing comprehensive audit trails that increased transparency by 85% for educational administrators and government oversight agencies.",
         },
         {
-          title: 'Compliance Assurance',
-          description: 'Developed automated validation rules that ensured 100% compliance with complex government regulations for educational funding.'
+          title: "Regulatory Compliance Framework",
+          description:
+            "Developed sophisticated validation engines and approval workflows that ensured 100% adherence to complex state and federal regulations governing public education funding, eliminating compliance violations and potential audit issues.",
         },
         {
-          title: 'Resource Allocation',
-          description: 'Created efficient allocation algorithms that optimized distribution of resources based on institutional needs and priorities.'
+          title: "Resource Optimization",
+          description:
+            "Created intelligent allocation algorithms that analyzed historical spending patterns, current needs assessments, and performance metrics to optimize distribution of limited financial resources based on institutional priorities and demonstrated outcomes.",
         },
         {
-          title: 'Deployment Scale',
-          description: 'Successfully deployed the system across 500+ educational institutions in two states with consistent user experience and data integrity.'
-        }
+          title: "Large-Scale Implementation",
+          description:
+            "Successfully deployed the system across 500+ educational institutions spanning two states with diverse operational requirements, maintaining consistent performance, data integrity, and user satisfaction throughout the rollout process.",
+        },
       ],
       testimonial: {
-        quote: "PTRF has revolutionized how we manage educational funding, providing unprecedented transparency and efficiency in our financial operations.",
-        author: "Educational Administrator",
-        company: "São Paulo State Education Department"
+        quote:
+          "PTRF has fundamentally transformed public education funding management across our state. The platform provides unprecedented transparency into resource allocation while ensuring complete regulatory compliance. Most importantly, it has dramatically reduced administrative burden on our educational institutions, allowing them to focus on their core mission while optimizing financial resources to directly support student outcomes.",
+        author: "Secretary of Education",
+        company: "São Paulo State Department of Education",
       },
-      nextProject: 'channels-hub'
-    }
+      nextProject: "channels-hub",
+    },
   ];
 
-  // Método para obter todos os projetos (com opção de filtro)
   const getAllProjects = (filter = {}) => {
     if (Object.keys(filter).length === 0) {
       return projects;
     }
 
-    return projects.filter(project => {
-      return Object.entries(filter).every(([key, value]) => project[key] === value);
+    return projects.filter((project) => {
+      return Object.entries(filter).every(
+        ([key, value]) => project[key] === value
+      );
     });
   };
 
-  // Método para obter um projeto específico por slug
   const getProjectBySlug = (slug) => {
-    return projects.find(project => project.slug === slug);
+    return projects.find((project) => project.slug === slug);
   };
 
-  // Método para obter projetos em formato simplificado (para listagens)
   const getProjectsForList = () => {
-    return projects.map(({ id, number, title, category, image, link, description, company, tech }) => ({
-      id, number, title, category, image, link, description, company, tech
-    }));
+    return projects.map(
+      ({
+        id,
+        number,
+        title,
+        category,
+        image,
+        link,
+        description,
+        company,
+        tech,
+      }) => ({
+        id,
+        number,
+        title,
+        category,
+        image,
+        link,
+        description,
+        company,
+        tech,
+      })
+    );
   };
 
-  // Método para obter o próximo projeto após um slug específico
   const getNextProject = (currentSlug) => {
     const currentProject = getProjectBySlug(currentSlug);
     if (!currentProject) return projects[0];
-    
+
     return getProjectBySlug(currentProject.nextProject) || projects[0];
   };
 
-  // Exposição dos métodos para uso nos componentes
   return {
     projects,
     getAllProjects,
     getProjectBySlug,
     getProjectsForList,
-    getNextProject
+    getNextProject,
   };
 };

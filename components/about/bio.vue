@@ -68,7 +68,7 @@ onMounted(() => {
             <p class="text-base leading-relaxed max-w-[540px] tracking-[0.01em] text-secondary font-normal">
               Hi! I'm Christian.
               <span
-                class="font-cascadia bg-black/[0.03] px-[0.3rem] py-[0.1rem] rounded tracking-[0.5px] whitespace-nowrap font-medium inline-block transition-all duration-300 ease-in-out hover:bg-black/[0.06] hover:-translate-y-[1px]"><span
+                class="font-cascadia bg-black/[0.03] px-[0.3rem] py-[0.1rem] rounded tracking-[0.5px] whitespace-nowrap font-medium inline-block hover:bg-black/[0.06] transition-all duration-300 ease-in-out hover:scale-105 transform-gpu"><span
                   class="text-primary font-semibold">&lt;</span>
                 Vue Specialist
                 <span class="text-primary font-semibold">/&gt;</span>

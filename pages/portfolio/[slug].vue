@@ -1,13 +1,10 @@
 <script setup>
-// Importar o composable de projetos para usar os dados centralizados
 import { useProjects } from '@/composables/useProjects';
 
-// Obter a referência ao composable
 const { getProjectBySlug, getNextProject } = useProjects();
 
 const route = useRoute();
 const currentSlug = route.params.slug;
-// Obter o projeto atual através do slug da rota
 const project = computed(() => {
   return getProjectBySlug(currentSlug) || null;
 });
@@ -47,7 +44,6 @@ onMounted(() => {
   }
 });
 
-// Obter o próximo projeto usando a função do composable
 const nextProject = computed(() => {
   return getNextProject(currentSlug);
 });
@@ -59,13 +55,27 @@ const scrollToSection = (sectionId) => {
       const header = document.querySelector('header');
       const headerHeight = header ? header.offsetHeight : 80;
 
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+      // Removendo quaisquer animações de opacidade que possam estar interferindo
+      element.classList.add('opacity-100');
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      // Adicionando um pequeno atraso para garantir que as animações sejam concluídas
+      setTimeout(() => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 20;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        // Destacar visualmente a seção selecionada
+        element.classList.add('ring-2', 'ring-primary', 'ring-opacity-50');
+
+        // Remover o destaque após 1.5 segundos
+        setTimeout(() => {
+          element.classList.remove('ring-2', 'ring-primary', 'ring-opacity-50');
+        }, 1500);
+      }, 100);
     }
   }
 };
@@ -76,7 +86,7 @@ const scrollToSection = (sectionId) => {
     <section class="py-20 md:py-24 bg-gray-50 border-b border-gray-100">
       <div class="px-6 sm:px-8 lg:px-10">
         <div class="container max-w-7xl mx-auto">
-          <div class="mb-8 md:mb-12 opacity-0 animate-fade-in-up" :class="{ 'opacity-100': isVisible }">
+          <div :class="['mb-8 md:mb-12 animate-fade-in-up', isVisible ? 'opacity-100' : 'opacity-0']">
             <div class="flex items-center text-sm text-tertiary">
               <NuxtLink to="/" class="hover:text-primary transition-colors duration-300">Home</NuxtLink>
               <svg class="w-3 h-3 mx-2" fill="currentColor" viewBox="0 0 20 20">
@@ -87,14 +97,14 @@ const scrollToSection = (sectionId) => {
               <NuxtLink to="/works" class="hover:text-primary transition-colors duration-300">Projects</NuxtLink>
               <svg class="w-3 h-3 mx-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a 1 1 0 01-1.414 0z"
                   clip-rule="evenodd"></path>
               </svg>
               <span class="font-medium text-primary">{{ project.title }}</span>
             </div>
           </div>
 
-          <div class="mb-12 opacity-0 animate-fade-in-up delay-100" :class="{ 'opacity-100': isVisible }">
+          <div :class="['mb-12 animate-fade-in-up delay-100', isVisible ? 'opacity-100' : 'opacity-0']">
             <div class="flex flex-wrap items-center gap-3 mb-4">
               <span
                 class="inline-block px-3 py-1 bg-white border border-gray-200 text-xs font-medium text-tertiary uppercase rounded-full shadow-sm">
@@ -107,23 +117,17 @@ const scrollToSection = (sectionId) => {
             <p class="body-large text-secondary max-w-3xl">{{ project.overview }}</p>
           </div>
 
-          <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10 lg:items-start">
-            <div class="lg:col-span-3 opacity-0 animate-fade-in-up delay-200">              <div class="rounded-lg overflow-hidden shadow-lg w-full h-full">
-                <NuxtImg 
-                  :src="project.heroImage" 
-                  :alt="project.title" 
-                  class="w-full object-cover aspect-[16/10]"
-                  format="webp"
-                  quality="90"
-                  loading="eager"
-                  placeholder />
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10 lg:items-stretch">
+            <div class="lg:col-span-3 opacity-0 animate-fade-in-up delay-200">
+              <div class="rounded-lg overflow-hidden shadow-lg w-full h-full">
+                <NuxtImg :src="project.heroImage" :alt="project.title" class="w-full h-full object-cover aspect-[16/10]"
+                  format="webp" quality="90" loading="eager" placeholder />
               </div>
             </div>
-
             <div class="lg:col-span-2 opacity-0 animate-fade-in-up delay-300 flex flex-col h-full">
               <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-6 flex-grow">
-                <h2 class="text-lg font-semibold text-primary mb-3">Overview</h2>
-                <p class="body-large text-secondary">{{ project.overview }}</p>
+                <h2 class="text-lg font-semibold text-primary mb-3">Description</h2>
+                <p class="body-large text-secondary">{{ project.description }}</p>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -171,68 +175,122 @@ const scrollToSection = (sectionId) => {
         <div class="container max-w-7xl mx-auto">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
             <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
-              <div class="sticky top-32">
-                <div class="space-y-6">
-                  <div>
-                    <span class="caption uppercase block mb-3">Sections</span>
-                    <ul class="space-y-4">
-                      <li>
+              <div
+                :class="['sticky top-32 z-20 pointer-events-auto animate-fade-in-up delay-[750ms]', isVisible ? 'opacity-100' : 'opacity-0']">
+                <div class="space-y-6 pointer-events-auto">
+                  <div class="pointer-events-auto">
+                    <span
+                      :class="['caption uppercase block mb-3 animate-fade-in-up delay-[800ms]', isVisible ? 'opacity-100' : 'opacity-0']">Sections</span>
+                    <ul class="space-y-4 relative z-20 pointer-events-auto">
+                      <li
+                        :class="['relative z-20 pointer-events-auto animate-fade-in-up delay-[850ms]', isVisible ? 'opacity-100' : 'opacity-0']">
                         <a href="#challenge" @click.prevent="scrollToSection('challenge')"
-                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">The
-                          Challenge</a>
+                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300 flex items-center relative z-20 pointer-events-auto group py-1 pl-3">
+                          <span
+                            class="absolute left-0 top-0 h-full w-0.5 bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"></span>
+                          The Challenge
+                        </a>
                       </li>
-                      <li>
+                      <li
+                        :class="['relative z-20 pointer-events-auto animate-fade-in-up delay-[900ms]', isVisible ? 'opacity-100' : 'opacity-0']">
                         <a href="#solution" @click.prevent="scrollToSection('solution')"
-                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">The
-                          Solution</a>
+                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300 flex items-center relative z-20 pointer-events-auto group py-1 pl-3">
+                          <span
+                            class="absolute left-0 top-0 h-full w-0.5 bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"></span>
+                          The Solution
+                        </a>
                       </li>
-                      <li>
+                      <li
+                        :class="['relative z-20 pointer-events-auto animate-fade-in-up delay-[950ms]', isVisible ? 'opacity-100' : 'opacity-0']">
                         <a href="#results" @click.prevent="scrollToSection('results')"
-                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">Results</a>
+                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300 flex items-center relative z-20 pointer-events-auto group py-1 pl-3">
+                          <span
+                            class="absolute left-0 top-0 h-full w-0.5 bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"></span>
+                          Results
+                        </a>
                       </li>
-                      <li>
+                      <li
+                        :class="['relative z-20 pointer-events-auto animate-fade-in-up delay-[1000ms]', isVisible ? 'opacity-100' : 'opacity-0']">
                         <a href="#achievements" @click.prevent="scrollToSection('achievements')"
-                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300">Key
-                          Achievements</a>
+                          class="font-body text-sm font-medium text-tertiary hover:text-primary transition-colors duration-300 flex items-center relative z-20 pointer-events-auto group py-1 pl-3">
+                          <span
+                            class="absolute left-0 top-0 h-full w-0.5 bg-primary scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center"></span>
+                          Key Achievements
+                        </a>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div class="lg:col-span-9 xl:col-span-10">
-              <div id="challenge" class="mb-16 opacity-0 animate-fade-in-up delay-700">
-                <h2 class="heading-3 mb-6">The Challenge</h2>
-                <p class="body text-secondary mb-6">{{ project.challenge }}</p>
+            <div class="lg:col-span-9 xl:col-span-10 relative z-0">
+              <div
+                :class="['mb-10 animate-fade-in-up delay-[700ms] relative z-0', isVisible ? 'opacity-100' : 'opacity-0']">
+                <h2 class="heading-3 text-left mb-8">
+                  Project Details.
+                </h2>
               </div>
 
-              <div id="solution" class="mb-16 opacity-0 animate-fade-in-up delay-800">
-                <h2 class="heading-3 mb-6">The Solution</h2>
-                <p class="body text-secondary mb-6">{{ project.solution }}</p>
+              <!-- Unified section for Challenge, Solution, and Results -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <!-- Card for The Challenge -->
+                <div id="challenge"
+                  :class="['bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 pointer-events-auto h-full flex flex-col animate-fade-in-up', isVisible ? 'opacity-100' : 'opacity-0']"
+                  @mouseenter="$event.currentTarget.classList.add('shadow-md', '-translate-y-1')"
+                  @mouseleave="$event.currentTarget.classList.remove('shadow-md', '-translate-y-1')">
+                  <div class="flex items-start">
+                    <div>
+                      <h3 class="font-medium text-lg text-primary mb-2">The Challenge</h3>
+                      <p class="text-secondary flex-grow">{{ project.challenge }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card for The Solution -->
+                <div id="solution"
+                  :class="['bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 pointer-events-auto h-full flex flex-col animate-fade-in-up', isVisible ? 'opacity-100' : 'opacity-0']"
+                  @mouseenter="$event.currentTarget.classList.add('shadow-md', '-translate-y-1')"
+                  @mouseleave="$event.currentTarget.classList.remove('shadow-md', '-translate-y-1')">
+                  <div class="flex items-start">
+                    <div>
+                      <h3 class="font-medium text-lg text-primary mb-2">The Solution</h3>
+                      <p class="text-secondary flex-grow">{{ project.solution }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card for Results -->
+                <div id="results"
+                  :class="['bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 pointer-events-auto h-full flex flex-col animate-fade-in-up', isVisible ? 'opacity-100' : 'opacity-0']"
+                  @mouseenter="$event.currentTarget.classList.add('shadow-md', '-translate-y-1')"
+                  @mouseleave="$event.currentTarget.classList.remove('shadow-md', '-translate-y-1')">
+                  <div class="flex items-start">
+                    <div>
+                      <h3 class="font-medium text-lg text-primary mb-2">Results</h3>
+                      <p class="text-secondary flex-grow">{{ project.results }}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div id="results" class="mb-16 opacity-0 animate-fade-in-up delay-900">
-                <h2 class="heading-3 mb-6">Results</h2>
-                <p class="body text-secondary mb-12">{{ project.results }}</p>
-              </div>
-              <div id="achievements" class="my-20 opacity-0 animate-fade-in-up delay-1100">
-                <h2 class="heading-3 mb-8">Key Achievements</h2>
+
+              <div id="achievements"
+                :class="['mt-8 animate-fade-in-up delay-1000 relative z-0 pointer-events-auto', isVisible ? 'opacity-100' : 'opacity-0']">
+                <div class="flex flex-col items-start mb-8">
+                  <div class="flex items-center mb-4">
+                    <h2 class="heading-3 text-primary">Key Achievements.</h2>
+                  </div>
+                </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div v-for="(achievement, index) in project.achievements" :key="index"
-                    class="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                    :class="['bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 pointer-events-auto', isVisible ? 'opacity-100' : 'opacity-0']"
+                    @mouseenter="$event.currentTarget.classList.add('shadow-md', '-translate-y-1')"
+                    @mouseleave="$event.currentTarget.classList.remove('shadow-md', '-translate-y-1')">
                     <div class="flex items-start">
-                      <div
-                        class="w-12 h-12 rounded-full bg-white flex items-center justify-center mr-4 flex-shrink-0 shadow-sm border border-gray-100">
-                        <svg class="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd"
-                            d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clip-rule="evenodd"></path>
-                        </svg>
+                      <div>
+                        <h3 class="font-medium text-lg text-primary mb-2">{{ achievement.title }}</h3>
+                        <p class="text-secondary">{{ achievement.description }}</p>
                       </div>
-                      <h3 class="font-medium text-lg text-primary">{{ achievement.title }}</h3>
                     </div>
-                    <p class="text-secondary ml-16">{{ achievement.description }}</p>
                   </div>
                 </div>
               </div>
@@ -242,22 +300,22 @@ const scrollToSection = (sectionId) => {
       </div>
     </section>
 
-    <section class="py-20 bg-gray-50 border-t border-gray-100 opacity-0 animate-fade-in-up delay-1200">
+    <section
+      :class="['py-20 bg-gray-50 border-t border-gray-100 animate-fade-in-up delay-1200', isVisible ? 'opacity-100' : 'opacity-0']">
       <div class="px-6 sm:px-8 lg:px-10">
         <div class="container max-w-7xl mx-auto">
           <div class="flex flex-col items-center text-center mb-10">
             <span class="text-xs font-medium text-tertiary tracking-wide uppercase mb-2 block">CONTINUE EXPLORING</span>
-            <h3 class="heading-3 mb-4">Next Project</h3>
+            <h3 class="heading-3 mb-4 flex items-center">
+              Next Project
+            </h3>
           </div>
 
-          <div class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer">
-            <NuxtLink :to="`/portfolio/${nextProject.slug}`" class="block relative">              <div class="relative w-full aspect-[21/9] overflow-hidden">
-                <NuxtImg 
-                  :src="nextProject.heroImage" 
-                  :alt="nextProject.title"
-                  format="webp"
-                  quality="90"
-                  loading="lazy"
+          <div
+            class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer transform transition-all duration-500 hover:shadow-xl">
+            <NuxtLink :to="`/portfolio/${nextProject.slug}`" class="block relative">
+              <div class="relative w-full aspect-[21/9] overflow-hidden">
+                <NuxtImg :src="nextProject.heroImage" :alt="nextProject.title" format="webp" quality="90" loading="lazy"
                   placeholder
                   class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300"></div>
@@ -265,8 +323,11 @@ const scrollToSection = (sectionId) => {
 
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-white text-center px-4">
-                  <span class="text-xs font-medium tracking-wide uppercase mb-2 block">{{ nextProject.category }}</span>
-                  <h4 class="font-heading text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">{{ nextProject.title }}
+                  <span class="text-xs font-medium tracking-wide uppercase mb-2 block">
+                    {{ nextProject.category }}
+                  </span>
+                  <h4 class="font-heading text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">
+                    {{ nextProject.title }}
                   </h4>
                   <div
                     class="inline-flex items-center group/btn bg-white bg-opacity-10 backdrop-blur-sm py-3 px-6 rounded-full hover:bg-opacity-20 transition-all duration-300">
