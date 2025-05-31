@@ -5,6 +5,8 @@ const displayedTitleLine1 = ref("");
 const displayedTitleLine2 = ref("");
 const typingSpeed = 50;
 const startDelay = 500;
+const { isMobile } = useResponsive();
+const { isMenuOpen } = useMenuState();
 
 const typeWriter = () => {
   let i = 0;
@@ -38,20 +40,34 @@ onMounted(() => {
 
 <template>
   <section
-    class="w-full flex items-center relative overflow-hidden bg-gray-50 py-28 md:py-56 opacity-0 animate-fade-in-slow">
+    class="w-full flex items-center relative overflow-hidden bg-gray-50 pt-28 pb-20 md:py-28 lg:py-56 opacity-0 animate-fade-in-slow">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
-      <div class="w-[clamp(220px,40vw,500px)] h-[clamp(220px,40vw,500px)] bg-white rounded-full"></div>
+      <div class="w-[clamp(220px,45vw,500px)] h-[clamp(220px,45vw,500px)] bg-white rounded-full"></div>
     </div>
-    <div class="px-4 sm:px-6 lg:px-8 w-full">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 container max-w-7xl mx-auto relative z-10">
-        <div class="flex flex-col justify-center pr-4">
+    <div class="px-6 sm:px-6 lg:px-8 w-full">      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 container max-w-7xl mx-auto relative z-10">        <!-- Ordem invertida para mobile: Estatua primeiro, texto depois -->
+        <div v-if="isMobile"
+          class="relative flex items-center justify-center opacity-0 animate-fade-in delay-500 group mb-8 mt-4 px-4 scale-125">
+          <div class="absolute w-full h-full z-10">
+            <div class="relative w-full h-full">
+              <div class="absolute w-full h-[5cap] bg-black top-1/2 -translate-y-1/2 rotate-45"></div>
+              <div class="absolute w-full h-[5cap] bg-black top-1/2 -translate-y-1/2 -rotate-45"></div>
+            </div>
+          </div>
+
+          <div class="profile-container z-20 opacity-0 animate-fade-in-scale delay-700 bg-transparent max-w-[85%]">
+            <NuxtImg src="/images/profile.png" alt="Christian Leonardo Chiavelli"
+              class="profile-image mix-blend-multiply object-contain h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center pr-0 md:pr-4">
           <h1
-            class="font-heading text-5xl font-bold leading-tight tracking-tight text-primary min-h-[1.5em] opacity-0 animate-fade-in-up delay-200">
+            class="font-heading text-4xl md:text-5xl font-bold leading-tight tracking-tight text-primary min-h-[1.5em] opacity-0 animate-fade-in-up delay-200">
             <span class="typing-line">{{ displayedTitleLine1 }}</span><br>
             <span class="typing-line">{{ displayedTitleLine2 }}</span>
           </h1>
 
-          <div class="mt-6 mb-12 opacity-0 animate-fade-in-up delay-400">
+          <div class="mt-6 mb-10 md:mb-12 opacity-0 animate-fade-in-up delay-400">
             <p class="text-base leading-relaxed text-secondary max-w-[540px]">
               Hi! I'm Christian.
               <span
@@ -67,14 +83,15 @@ onMounted(() => {
 
           <div class="opacity-0 animate-fade-in-up delay-600">
             <NuxtLink to="/works"
-              class="inline-block relative transition-opacity duration-300 hover:opacity-90 h-[72px] group">
+              class="inline-block relative transition-opacity duration-300 hover:opacity-90 h-[60px] md:h-[72px] group">
               <div class="relative flex items-center">
                 <div
-                  class="w-[72px] h-[72px] bg-gray-200 rounded-full absolute left-0 -z-10 transition-transform duration-300 ease-out group-hover:scale-110">
+                  class="w-[60px] h-[60px] md:w-[72px] md:h-[72px] bg-gray-200 rounded-full absolute left-0 -z-10 transition-transform duration-300 ease-out group-hover:scale-110">
                 </div>
 
                 <div class="flex items-center pl-6">
-                  <span class="font-body text-base font-semibold leading-tight tracking-wide">SEE MY WORKS</span>
+                  <span class="font-body text-sm md:text-base font-semibold leading-tight tracking-wide">SEE MY
+                    WORKS</span>
 
                   <div class="relative ml-3 transition-all duration-300 ease-in-out">
                     <svg width="20" height="8" viewBox="0 0 20 8" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -87,42 +104,42 @@ onMounted(() => {
               </div>
             </NuxtLink>
           </div>
-
-          <div class="mt-16 flex items-center space-x-2 opacity-0 animate-fade-in-up delay-800">
+          <div v-show="!isMenuOpen"
+            class="mt-10 md:mt-16 flex flex-wrap items-center opacity-0 animate-fade-in-up delay-800">
             <a href="https://github.com/christianchiavelli" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body">
+              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body px-2 first:pl-0">
               GitHub
             </a>
-            <span class="text-gray-400">/</span>
+            <span class="text-gray-300">/</span>
             <a href="https://www.linkedin.com/in/christianchiavelli/" target="_blank" rel="noopener noreferrer"
-              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body">
+              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body px-2">
               LinkedIn
             </a>
+            <span class="text-gray-300">/</span>
             <a href="mailto:chiavellidev@gmail.com"
-              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body">
-              chiavellidev@gmail.com
+              class="text-sm font-medium text-tertiary transition-colors duration-300 hover:text-primary font-body px-2">
+              Email
             </a>
           </div>
-        </div>
-
-        <div class="relative flex items-center justify-center opacity-0 animate-fade-in delay-500 group">
+        </div> <!-- Estatua para desktop -->        <div v-if="!isMobile"
+          class="relative flex items-center justify-center opacity-0 animate-fade-in delay-500 group">
           <div class="absolute w-full h-full z-10">
             <div class="relative w-full h-full">
-              <div class="absolute w-full h-[5cap] bg-black top-1/2 -translate-y-1/2 rotate-45"></div>
-              <div class="absolute w-full h-[5cap] bg-black top-1/2 -translate-y-1/2 -rotate-45"></div>
+              <div class="absolute w-full h-[6cap] bg-black top-1/2 -translate-y-1/2 rotate-45"></div>
+              <div class="absolute w-full h-[6cap] bg-black top-1/2 -translate-y-1/2 -rotate-45"></div>
             </div>
           </div>
 
-          <div class="profile-container z-20 opacity-0 animate-fade-in-scale delay-900 bg-transparent">
+          <div class="profile-container z-20 opacity-0 animate-fade-in-scale delay-700 bg-transparent">
             <NuxtImg src="/images/profile.png" alt="Christian Leonardo Chiavelli"
               class="profile-image mix-blend-multiply object-contain h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
           </div>
         </div>
       </div>
-
       <div class="container max-w-7xl mx-auto relative">
-        <div
-          class="absolute bottom-0 right-0 flex flex-col items-center opacity-0 animate-fade-in delay-1000 translate-y-28">
+        <div v-show="!isMenuOpen"
+          class="absolute bottom-0 right-6 md:right-0 flex flex-col items-center opacity-0 animate-fade-in delay-1000 translate-y-10 md:translate-y-28 pb-6 md:pb-0 transition-opacity duration-300"
+          :class="{ 'opacity-0': isMenuOpen, 'opacity-100': !isMenuOpen }">
           <div class="[writing-mode:vertical-rl] text-xs font-semibold text-tertiary tracking-wider mb-4">
             SCROLL DOWN
           </div>

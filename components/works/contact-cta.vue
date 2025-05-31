@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gray-50 py-24 overflow-hidden">
+  <section class="bg-gray-50 py-10 overflow-hidden">
     <div class="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="opacity-0 animate-fade-in-up">

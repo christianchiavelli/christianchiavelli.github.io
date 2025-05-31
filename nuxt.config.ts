@@ -6,6 +6,10 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
   css: ["~/assets/fonts/fonts.css"],
 
+  build: {
+    transpile: ["@iconify/vue"],
+  },
+
   runtimeConfig: {
     public: {
       formspreeId: process.env.FORMSPREE_ID,

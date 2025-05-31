@@ -1,5 +1,5 @@
 <template>
-  <section class="relative overflow-hidden py-28 md:py-36 bg-gray-50">
+  <section class="relative overflow-hidden pt-36 pb-10 bg-gray-50">
     <div class="absolute inset-0 flex justify-center pointer-events-none z-0">
       <div class="relative w-full max-w-7xl px-4 sm:px-6 lg:px-8 h-full">
         <div
@@ -27,10 +27,9 @@
     </div>
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl">
-        <h1 class="heading-1 text-primary mb-6 opacity-0 animate-fade-in-up">Crafted with love.</h1>
+        <h1 class="heading-1 text-primary mb-6 opacity-0 animate-fade-in-up">Crafted for enterprise success.</h1>
         <p class="subtitle text-secondary mb-10 opacity-0 animate-fade-in-up delay-200">
-          A collection of my most relevant projects developed throughout my career in web development and front-end
-          architecture.
+          Solutions I've implemented as a front-end developer, making an impact on businesses and users.
         </p>
       </div>
     </div>

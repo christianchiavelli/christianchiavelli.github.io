@@ -5,14 +5,12 @@ const emit = defineEmits(['contact']);
 <template>
   <section class="py-24 md:py-32 bg-white relative overflow-hidden opacity-0 animate-fade-in-up">
     <div class="container max-w-7xl mx-auto relative">
-      <div class="absolute top-[-150px] right-[5%] w-56 h-56 rounded-full bg-primary opacity-5 animate-circle-pulse"></div>
-      <div class="absolute bottom-[-100px] left-[5%] w-48 h-48 rounded-full bg-secondary opacity-5 animate-circle-pulse delay-700"></div>
-      
       <div class="px-6 sm:px-8 lg:px-10 relative z-10">
         <div class="max-w-5xl mx-auto text-center">
           <span
             class="text-xs font-medium text-tertiary tracking-wide uppercase mb-3 block opacity-0 animate-fade-in-up delay-300">LET'S
-            WORK TOGETHER</span>
+            WORK TOGETHER
+          </span>
           <h2 class="heading-2 mb-6 opacity-0 animate-fade-in-up delay-400">Have a project in mind?</h2>
           <p class="body-large text-secondary max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up delay-500">
             I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
