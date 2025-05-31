@@ -62,5 +62,8 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
     preset: "static",
+    prerender: {
+      routes: ["/", "/about", "/contact", "/works"],
+    },
   },
 });

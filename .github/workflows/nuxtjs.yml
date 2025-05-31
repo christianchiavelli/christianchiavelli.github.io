@@ -1,4 +1,4 @@
-name: "CI/CD: Deploy Nuxt Portfólio to Pages"
+name: "Deploy to GitHub Pages"
 
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./.output/public
-
+  # Job de deploy - este nome é importante para o GitHub Pages
   deploy:
     environment:
       name: github-pages
