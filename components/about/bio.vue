@@ -55,12 +55,14 @@ onMounted(() => {
       <div class="flex flex-col md:flex-row md:items-center gap-12">
         <div class="md:w-1/2">
           <div class="mt-8 mb-12">
-            <p class="text-3xl font-normal mb-5 text-primary opacity-0 animate-fade-in-up delay-200">I am a passionate</p>
+            <p class="text-3xl font-normal mb-5 text-primary opacity-0 animate-fade-in-up delay-200">I am a passionate
+            </p>
             <h2 class="text-4xl font-bold mb-2 text-primary whitespace-nowrap opacity-0 animate-fade-in-up delay-300">
               <span class="typing-line">{{ displayedTitleLine1 }}</span><br>
               <span class="typing-line">{{ displayedTitleLine2 }}</span>
             </h2>
-            <p class="text-3xl mb-5 text-primary opacity-0 animate-fade-in-up delay-400">and <span class="font-bold">Vue Specialist</span> with expertise in
+            <p class="text-3xl mb-5 text-primary opacity-0 animate-fade-in-up delay-400">and <span class="font-bold">Vue
+                Specialist</span> with expertise in
               modern UI.</p>
           </div>
 
@@ -82,15 +84,16 @@ onMounted(() => {
         <div class="md:w-1/2 flex justify-center">
           <div class="relative group">
             <div class="relative z-10 overflow-hidden profile-container opacity-0 animate-fade-in-scale delay-600">
-              <NuxtImg src="/images/profile.png" alt="Christian Chiavelli - Developer"
+              <img src="/images/profile.png" alt="Christian Chiavelli - Developer"
                 class="object-cover w-full max-w-md mix-blend-multiply scale-x-[-1] transition-transform duration-500 ease-out group-hover:scale-[1.03] group-hover:scale-x-[-1.03]" />
             </div>
           </div>
         </div>
       </div>
-      
+
       <div class="container max-w-7xl mx-auto relative">
-        <div class="absolute bottom-0 right-0 flex flex-col items-center opacity-0 animate-fade-in delay-1000 translate-y-28">
+        <div
+          class="absolute bottom-0 right-0 flex flex-col items-center opacity-0 animate-fade-in delay-1000 translate-y-28">
           <div class="[writing-mode:vertical-rl] text-xs font-semibold text-tertiary tracking-wider mb-4">SCROLL DOWN
           </div>
           <div class="flex justify-center">

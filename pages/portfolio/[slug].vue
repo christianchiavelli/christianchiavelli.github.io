@@ -120,8 +120,7 @@ const scrollToSection = (sectionId) => {
           <div class="grid grid-cols-1 gap-8 lg:grid-cols-5 lg:gap-10 lg:items-stretch">
             <div class="lg:col-span-3 opacity-0 animate-fade-in-up delay-200">
               <div class="rounded-lg overflow-hidden shadow-lg w-full h-full">
-                <NuxtImg :src="project.heroImage" :alt="project.title" class="w-full h-full object-cover aspect-[16/10]"
-                  format="webp" quality="90" loading="eager" placeholder />
+                <img :src="project.heroImage" :alt="project.title" class="w-full h-full object-cover aspect-[16/10]" />
               </div>
             </div>
             <div class="lg:col-span-2 opacity-0 animate-fade-in-up delay-300 flex flex-col h-full">
@@ -314,9 +313,8 @@ const scrollToSection = (sectionId) => {
           <div
             class="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer transform transition-all duration-500 hover:shadow-xl">
             <NuxtLink :to="`/portfolio/${nextProject.slug}`" class="block relative">
-              <div class="relative w-full aspect-[21/9] overflow-hidden">
-                <NuxtImg :src="nextProject.heroImage" :alt="nextProject.title" format="webp" quality="90" loading="lazy"
-                  placeholder
+              <div class="relative w-full aspect-[21/9] overflow-hidden"> <img :src="nextProject.heroImage"
+                  :alt="nextProject.title"
                   class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" />
                 <div class="absolute inset-0 bg-black bg-opacity-30 transition-opacity duration-300"></div>
               </div>

@@ -44,7 +44,8 @@ onMounted(() => {
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
       <div class="w-[clamp(220px,45vw,500px)] h-[clamp(220px,45vw,500px)] bg-white rounded-full"></div>
     </div>
-    <div class="px-6 sm:px-6 lg:px-8 w-full">      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 container max-w-7xl mx-auto relative z-10">        <!-- Ordem invertida para mobile: Estatua primeiro, texto depois -->
+    <div class="px-6 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 container max-w-7xl mx-auto relative z-10">
         <div v-if="isMobile"
           class="relative flex items-center justify-center opacity-0 animate-fade-in delay-500 group mb-8 mt-4 px-4 scale-125">
           <div class="absolute w-full h-full z-10">
@@ -53,9 +54,8 @@ onMounted(() => {
               <div class="absolute w-full h-[5cap] bg-black top-1/2 -translate-y-1/2 -rotate-45"></div>
             </div>
           </div>
-
           <div class="profile-container z-20 opacity-0 animate-fade-in-scale delay-700 bg-transparent max-w-[85%]">
-            <NuxtImg src="/images/profile.png" alt="Christian Leonardo Chiavelli"
+            <img src="/images/profile.png" alt="Christian Leonardo Chiavelli"
               class="profile-image mix-blend-multiply object-contain h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
           </div>
         </div>
@@ -121,7 +121,8 @@ onMounted(() => {
               Email
             </a>
           </div>
-        </div> <!-- Estatua para desktop -->        <div v-if="!isMobile"
+        </div> <!-- Estatua para desktop -->
+        <div v-if="!isMobile"
           class="relative flex items-center justify-center opacity-0 animate-fade-in delay-500 group">
           <div class="absolute w-full h-full z-10">
             <div class="relative w-full h-full">
@@ -129,9 +130,8 @@ onMounted(() => {
               <div class="absolute w-full h-[6cap] bg-black top-1/2 -translate-y-1/2 -rotate-45"></div>
             </div>
           </div>
-
           <div class="profile-container z-20 opacity-0 animate-fade-in-scale delay-700 bg-transparent">
-            <NuxtImg src="/images/profile.png" alt="Christian Leonardo Chiavelli"
+            <img src="/images/profile.png" alt="Christian Leonardo Chiavelli"
               class="profile-image mix-blend-multiply object-contain h-full w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
           </div>
         </div>

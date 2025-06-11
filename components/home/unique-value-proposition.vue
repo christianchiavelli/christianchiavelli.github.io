@@ -192,9 +192,7 @@ onMounted(() => {
                     stroke-linejoin="round" />
                 </svg>
               </div>
-            </div>
-
-            <NuxtImg :src="project.image" :alt="project.title"
+            </div> <img :src="project.image" :alt="project.title"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
           </NuxtLink>
         </div>

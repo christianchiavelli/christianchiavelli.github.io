@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   ssr: false,
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image"],
+  modules: ["@nuxtjs/tailwindcss"],
   css: ["~/assets/fonts/fonts.css"],
 
   build: {
@@ -40,18 +40,6 @@ export default defineNuxtConfig({
         { property: "og:image", content: "/images/profile.png" },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
-    },
-  },
-  image: {
-    quality: 100,
-    format: ["webp", "jpg"],
-    screens: {
-      xs: 320,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
     },
   },
   vite: {
