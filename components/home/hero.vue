@@ -73,7 +73,7 @@ onMounted(() => {
               <span
                 class="font-code bg-black/[0.03] px-3 py-1 rounded text-primary font-medium tracking-wide whitespace-nowrap inline-block hover:bg-black/[0.06] transition-all duration-300 ease-in-out hover:scale-105 transform-gpu"><span
                   class="text-primary font-semibold">&lt;</span>
-                Digital Designer
+                Frontend Developer
                 <span class="text-primary font-semibold">/&gt;</span>
               </span>
               with a passion for impactful visual experiences and elegant interfaces.
