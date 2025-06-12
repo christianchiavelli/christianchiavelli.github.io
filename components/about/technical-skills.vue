@@ -28,7 +28,7 @@ const skillCategories = [
     skills: [
       { name: 'TailwindCSS', icon: 'simple-icons:tailwindcss' },
       { name: 'Vuetify', icon: 'simple-icons:vuetify' },
-      { name: 'PrimeVue', icon: 'mdi:web' },
+      { name: 'PrimeVue', icon: 'simple-icons:primevue' },
       { name: 'Sass', icon: 'simple-icons:sass' }
     ]
   },
@@ -122,7 +122,7 @@ const skillCategories = [
             <div class="md:col-span-8">
               <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                 <div v-for="(skill, index) in category.skills" :key="index"
-                  class="group/card flex flex-col items-center p-5 rounded-xl bg-white border border-neutral-100 shadow-sm opacity-0 animate-rise-in hover:-translate-y-1 hover:shadow-md"
+                  class="group/card flex flex-col items-center p-5 rounded-xl bg-white border border-neutral-100 shadow-sm hover:-translate-y-1 hover:shadow-md"
                   :style="{
                     'transition': 'transform 0.3s ease, box-shadow 0.3s ease',
                     'animation-delay': `${900 + (index * 100)}ms`

@@ -59,6 +59,5 @@ export const themeConfig = {
     scale: {
       "120": "1.2",
     },
-    // Outros elementos básicos do tema
-  }
+  },
 };
