@@ -89,7 +89,7 @@ const skillCategories = [
 </script>
 
 <template>
-  <section class="w-full py-24 md:py-32 bg-neutral-50 opacity-0 animate-fade-in-slow delay-400">
+  <section class="w-full pt-24 pb-6 md:pt-32 md:pb-8 bg-neutral-50 opacity-0 animate-fade-in-slow delay-400">
     <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto md:mx-0">
         <h2 class="heading-2 mb-6 opacity-0 animate-fade-in-up delay-500">Technical Expertise.</h2>

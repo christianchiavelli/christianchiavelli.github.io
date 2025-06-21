@@ -1,4 +1,12 @@
 <script setup>
+import AboutBio from '~/components/about/bio.vue';
+import AboutSkillsList from '~/components/about/skills-list.vue';
+import AboutWorkProcess from '~/components/about/work-process.vue';
+import AboutQuote from '~/components/about/quote.vue';
+import AboutTechnicalSkills from '~/components/about/technical-skills.vue';
+import AboutResumeCta from '~/components/about/resume-cta.vue';
+import AboutContactCta from '~/components/about/contact-cta.vue';
+
 useHead({
   title: 'About | Christian Chiavelli',
   meta: [
@@ -12,8 +20,9 @@ useHead({
     <AboutBio />
     <AboutSkillsList />
     <AboutWorkProcess />
-    <AboutQuote />
     <AboutTechnicalSkills />
+    <AboutResumeCta /> 
+    <AboutQuote />
     <AboutContactCta />
   </div>
 </template>

@@ -40,7 +40,7 @@ onMounted(() => {
 
 <template>
   <section
-    class="w-full flex items-center relative overflow-hidden bg-gray-50 pt-28 pb-20 md:py-28 lg:py-56 opacity-0 animate-fade-in-slow">
+    class="w-full flex items-center relative overflow-hidden bg-gray-50 pt-28 pb-20 md:py-28 lg:py-36 opacity-0 animate-fade-in-slow">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
       <div class="w-[clamp(220px,45vw,500px)] h-[clamp(220px,45vw,500px)] bg-white rounded-full"></div>
     </div>

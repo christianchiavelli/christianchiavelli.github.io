@@ -18,7 +18,7 @@ defineProps({
       :style="{ backgroundImage: `url('/images/quote.jpg')` }">
       <div class="absolute inset-0 bg-gradient-to-br from-black/80 to-black/60 z-10 animate-fade-in-slow"></div>
 
-      <div class="relative z-20 w-full max-w-screen-2xl mx-auto px-4">
+      <div class="relative z-20 w-full max-w-screen-2xl mx-auto px-4 py-20 md:py-28">
         <div class="max-w-4xl mx-auto text-center">
           <div class="relative mb-10 animate-scale-in delay-200">
             <svg width="64" height="48" viewBox="0 0 80 64" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ defineProps({
             </svg>
             <div class="absolute w-16 h-1 bg-primary bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
           </div>
-          <p class="quote-large mb-12 leading-snug max-w-3xl mx-auto animate-text-focus-in delay-400 px-8 text-[2.6rem]">
+          <p class="quote-large mb-8 md:mb-12 leading-snug max-w-3xl mx-auto animate-text-focus-in delay-400 px-4 sm:px-8 text-2xl sm:text-3xl md:text-[2.6rem]">
             {{ quoteText }}
           </p>
           <div
