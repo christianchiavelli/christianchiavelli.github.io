@@ -1,17 +1,26 @@
-export const animationConfig = {  extend: {
+export const animationConfig = {
+  extend: {
     animation: {
       "fade-in": "fadeIn 0.8s ease-out forwards",
       "fade-in-up": "fadeInUp 0.8s ease-out forwards",
       "fade-in-slow": "fadeIn 1.2s ease-out forwards",
       "fade-in-down": "fadeInDown 0.5s ease-out forwards",
-      "fade-in-scale": "fadeInScale 0.6s cubic-bezier(0.33, 1, 0.68, 1) forwards",
-      "pulse-slow": "pulseSlow 3s ease-in-out infinite",      "menu-fade-in": "menuFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      "fade-in-scale":
+        "fadeInScale 0.6s cubic-bezier(0.33, 1, 0.68, 1) forwards",
+      "pulse-slow": "pulseSlow 3s ease-in-out infinite",
+      "scroll-x": "scrollX 45s linear infinite",
+      "menu-fade-in": "menuFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       "menu-fade-out": "menuFadeOut 0.3s ease-out forwards",
-      "scale-circle": "scaleCircle 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards",
-      "menu-circle-in": "menuCircleIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-      "menu-stagger-in": "menuStaggerIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
-      "slide-in-right": "slideInRight 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards",
-      "slide-in-left": "slideInLeft 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards",
+      "scale-circle":
+        "scaleCircle 0.7s cubic-bezier(0.33, 1, 0.68, 1) forwards",
+      "menu-circle-in":
+        "menuCircleIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      "menu-stagger-in":
+        "menuStaggerIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+      "slide-in-right":
+        "slideInRight 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards",
+      "slide-in-left":
+        "slideInLeft 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards",
     },
     keyframes: {
       fadeIn: {
@@ -33,13 +42,16 @@ export const animationConfig = {  extend: {
       pulseSlow: {
         "0%, 100%": { transform: "scale(1)", opacity: "0.5" },
         "50%": { transform: "scale(1.15)", opacity: "0.8" },
-      },      menuFadeIn: {
+      },
+      menuFadeIn: {
         "0%": { opacity: "0" },
         "100%": { opacity: "1" },
-      },      menuFadeOut: {
+      },
+      menuFadeOut: {
         "0%": { opacity: "1" },
         "100%": { opacity: "0" },
-      },scaleCircle: {
+      },
+      scaleCircle: {
         "0%": { transform: "scale(0.95)", opacity: "0" },
         "30%": { transform: "scale(0.97)", opacity: "0.5" },
         "100%": { transform: "scale(1)", opacity: "1" },
@@ -47,16 +59,24 @@ export const animationConfig = {  extend: {
       menuStaggerIn: {
         "0%": { transform: "translateX(-20px)", opacity: "0" },
         "100%": { transform: "translateX(0)", opacity: "1" },
-      },slideInRight: {
+      },
+      slideInRight: {
         "0%": { transform: "translateX(-100%)", opacity: "0" },
         "100%": { transform: "translateX(0)", opacity: "1" },
-      },      slideInLeft: {
+      },
+      slideInLeft: {
         "0%": { transform: "translateX(100%)", opacity: "0" },
         "100%": { transform: "translateX(0)", opacity: "1" },
+      },      scrollX: {
+        "0%": { transform: "translateX(0)" },
+        "100%": { transform: "translateX(-50%)" },
       },
       menuCircleIn: {
         "0%": { transform: "translate(-50%, -50%) scale(0.95)", opacity: "0" },
-        "40%": { transform: "translate(-50%, -50%) scale(0.98)", opacity: "0.6" },
+        "40%": {
+          transform: "translate(-50%, -50%) scale(0.98)",
+          opacity: "0.6",
+        },
         "100%": { transform: "translate(-50%, -50%) scale(1)", opacity: "1" },
       },
     },
@@ -82,5 +102,5 @@ export const animationConfig = {  extend: {
       "1800": "1800ms",
       "1900": "1900ms",
     },
-  }
+  },
 };
