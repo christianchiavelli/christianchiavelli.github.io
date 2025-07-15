@@ -3,7 +3,7 @@ import { Icon } from '@iconify/vue';
 
 const availability = {
   status: 'available',
-  message: 'Available for projects starting June 2025',
+  message: 'Open to new freelance and contract opportunities',
   responseTime: 'Response within 24-48 hours on business days'
 };
 
@@ -52,7 +52,7 @@ const statusInfo = computed(() => getCurrentStatus());
           <div class="text-xs font-semibold text-gray-800 tracking-[0.2em] uppercase">PROFESSIONAL EXPERIENCE</div>
         </div>
 
-        <div class="text-5xl font-bold mb-5 font-heading tracking-tight text-gray-900">+7 <span
+        <div class="text-5xl font-bold mb-5 font-heading tracking-tight text-gray-900">+8 <span
             class="text-3xl text-gray-800">years</span></div>
 
         <div class="flex items-center space-x-5 mb-6">

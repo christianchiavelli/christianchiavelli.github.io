@@ -1,12 +1,47 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 
+const skillExperience = {
+  'HTML': 8,
+  'CSS': 8,
+  'JavaScript': 8,
+  'TypeScript': 5,
+  'Vue.js': 6,
+  'Nuxt.js': 3,
+  'TailwindCSS': 3,
+  'Vuetify': 2,
+  'PrimeVue': 1,
+  'Sass': 3,
+  'Node.js': 4,
+  '.NET': 7,
+  'RESTful APIs': 6,
+  'MS SQL Server': 7,
+  'PostgreSQL': 2,
+  'SQLite': 1,
+  'MongoDB': 1,
+  'Jest': 2,
+  'Playwright': 1,
+  'PHP': 1,
+  'Symfony': 1,
+  'AngularJS': 1,
+  'Storybook': 2,
+  'Figma': 6,
+  'Webpack': 7,
+  'Vite': 3,
+  'npm': 8,
+  'yarn': 1,
+  'pnpm': 2,
+  'Adobe XD': 6,
+  'Vitest': 1
+};
+
 const skillCategories = [
   {
     title: 'Design & UX',
     description: 'Tools I use to replicate designs created for the system',
     skills: [
       { name: 'Figma', icon: 'simple-icons:figma' },
+      { name: 'Adobe XD', icon: 'simple-icons:adobexd' },
       { name: 'Storybook', icon: 'simple-icons:storybook' }
     ]
   },
@@ -67,6 +102,7 @@ const skillCategories = [
     description: 'Tools I use for testing web applications',
     skills: [
       { name: 'Jest', icon: 'simple-icons:jest' },
+      { name: 'Vitest', icon: 'simple-icons:vitest' },
       { name: 'Playwright', icon: 'simple-icons:playwright' }
     ]
   },
@@ -80,9 +116,19 @@ const skillCategories = [
       { name: 'GitHub', icon: 'simple-icons:github' },
       { name: 'GitLab', icon: 'simple-icons:gitlab' },
       { name: 'Bitbucket', icon: 'simple-icons:bitbucket' },
-      { name: 'Azure DevOps', icon: 'simple-icons:azuredevops' },
+      { name: 'Azure DevOps', icon: 'simple-icons:azuredevops' }
+    ]
+  },
+  {
+    title: 'Project Management',
+    description: 'Tools and methodologies I use to manage projects and teams',
+    skills: [
+      { name: 'Azure Boards', icon: 'simple-icons:azuredevops' },
       { name: 'Jira', icon: 'simple-icons:jira' },
-      { name: 'Trello', icon: 'simple-icons:trello' }
+      { name: 'Trello', icon: 'simple-icons:trello' },
+      { name: 'YouTrack', icon: 'simple-icons:jetbrains' },
+      { name: 'Scrum', icon: 'mdi:account-group' },
+      { name: 'Kanban', icon: 'mdi:view-dashboard' }
     ]
   }
 ];
@@ -130,7 +176,14 @@ const skillCategories = [
                   <div class="h-14 w-14 flex items-center justify-center mb-4 text-primary">
                     <Icon :icon="skill.icon" class="h-10 w-10" />
                   </div>
-                  <span class="button-text text-center">{{ skill.name }}</span>
+                  <span class="button-text text-center block">
+                    {{ skill.name }}
+                    <template v-if="skillExperience[skill.name]">
+                      <span class="block text-xs text-gray-400 mt-1">
+                        {{ skillExperience[skill.name] }} {{ skillExperience[skill.name] === 1 ? 'year' : 'years' }}
+                      </span>
+                    </template>
+                  </span>
                 </div>
               </div>
             </div>
