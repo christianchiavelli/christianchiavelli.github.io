@@ -1,4 +1,6 @@
 <script setup>
+import { Icon } from '@iconify/vue';
+
 defineProps({
   error: Object
 });
@@ -9,177 +11,173 @@ const handleGoBack = () => {
 </script>
 
 <template>
-  <div
-    class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-br from-white to-neutral-50">
-    <div class="absolute inset-0 z-0">
-      <div
-        class="absolute top-20 left-20 w-96 h-96 rounded-full bg-blue-50 filter blur-3xl opacity-60 animate-morph-bg">
-      </div>
-      <div
-        class="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-purple-50 filter blur-3xl opacity-60 animate-morph-bg delay-500">
-      </div>
-      <div
-        class="absolute top-1/2 left-1/3 w-72 h-72 rounded-full bg-orange-50 filter blur-3xl opacity-40 animate-morph-bg delay-700">
-      </div>
+  <div class="min-h-screen flex flex-col relative overflow-hidden bg-white">
+    <!-- Header spacing to match layout -->
+    <div class="h-24"></div>
 
-      <div class="absolute inset-0 opacity-10 animate-fade-in-blur">
-        <div class="bg-[radial-gradient(circle,#e5e5e5_1px,transparent_1px)] bg-[length:30px_30px] w-full h-full"></div>
+    <!-- Background elements matching project style - Only on desktop -->
+    <div class="absolute inset-0 z-0 hidden lg:block">
+      <!-- Geometric shapes similar to other pages -->
+      <div class="absolute w-[clamp(300px,30vw,400px)] h-[clamp(300px,30vw,400px)] top-1/2 right-0 -translate-y-1/2">
+        <div class="absolute w-1/2 h-full rounded-l-full border-t border-l border-b border-gray-900 opacity-10 right-0">
+        </div>
+        <div class="absolute w-full h-[1px] bg-black opacity-15 top-1/2 -translate-y-1/2"></div>
+        <div class="absolute w-20 h-20 rounded-full bg-gray-800 opacity-5 top-1/4 left-1/4"></div>
       </div>
     </div>
 
-    <div class="container mx-auto px-4 py-16 relative z-10">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div class="flex flex-col justify-center space-y-6 animate-slide-up-fade opacity-0">
-          <span class="text-sm uppercase tracking-widest text-neutral-500 font-medium mb-2 delay-300">Error</span>
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex-1">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh] lg:min-h-[80vh]">
+        <!-- Left side - Error content -->
+        <div class="flex flex-col justify-center space-y-6 lg:space-y-8 opacity-0 animate-fade-in-up lg:order-1 order-1">
+          <div>
+            <p
+              class="text-sm font-heading uppercase tracking-widest text-tertiary font-semibold mb-6 opacity-0 animate-fade-in-up delay-200">
+              ERROR {{ error?.statusCode || '404' }}
+            </p>
 
-          <h1
-            class="text-[10rem] md:text-[12rem] font-bold leading-none bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 via-neutral-700 to-neutral-800 animate-fade-in-blur delay-100 opacity-0">
-            {{ error?.statusCode || '404' }}
-          </h1>
+            <h1
+              class="text-6xl md:text-7xl lg:text-8xl font-heading font-bold text-primary mb-6 leading-none opacity-0 animate-fade-in-up delay-300">
+              Page not found
+            </h1>
 
-          <h2 class="text-2xl md:text-3xl font-medium text-neutral-800 animate-slide-in-left delay-200 opacity-0">Page
-            not found</h2>
+            <p
+              class="text-lg md:text-xl text-secondary max-w-lg leading-relaxed opacity-0 animate-fade-in-up delay-400">
+              Sorry, the page you're looking for doesn't exist or has been moved. Let's get you back to exploring my
+              work.
+            </p>
+          </div>
 
-          <p class="text-lg text-neutral-600 max-w-md animate-slide-in-left delay-300 opacity-0">
-            Looks like you've tried to access a page that doesn't exist or has been removed.
-          </p>
+          <div class="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in-up delay-500">
+            <NuxtLink to="/"
+              class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-heading font-semibold text-sm tracking-wide rounded-none transition-colors duration-300 group">
+              <span class="mr-3">BACK TO HOME</span>
+              <Icon icon="mdi:arrow-right" class="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1" />
+            </NuxtLink>
 
-          <!-- Removendo o botão redundante "GO BACK" -->
-        </div>
-
-        <div class="relative animate-fade-in-scale opacity-0 delay-200">
-          <div class="aspect-square max-w-md mx-auto lg:mx-0 lg:ml-auto">
-            <div class="relative w-full h-full flex items-center justify-center perspective">
-              <div
-                class="absolute w-[85%] h-[85%] rounded-full bg-gradient-to-br from-neutral-50 to-neutral-100 opacity-80 animate-pulse-ring">
-              </div>
-              <div class="absolute w-[90%] h-[90%] rounded-full border-4 border-dashed border-neutral-100 opacity-40">
-              </div>
-
-              <div
-                class="absolute -left-14 top-1/4 w-40 h-56 rounded-lg bg-white shadow-sm p-4 transform -rotate-6 hover:rotate-0 transition-transform duration-300 z-10 animate-slide-in-left opacity-0 delay-300">
-                <div class="w-full h-full flex flex-col gap-3">
-                  <div class="w-full flex justify-between items-center mb-2">
-                    <div class="flex space-x-1.5">
-                      <div class="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
-                      <div class="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
-                      <div class="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
-                    </div>
-                    <div class="w-16 h-1.5 bg-neutral-200 rounded-full"></div>
-                  </div>
-
-                  <div class="w-full h-2 bg-neutral-200 rounded-full"></div>
-                  <div class="w-3/4 h-2 bg-neutral-200 rounded-full"></div>
-
-                  <div class="w-full h-16 bg-neutral-100 rounded-md mt-1"></div>
-
-                  <div class="space-y-1.5 mt-2">
-                    <div class="w-full h-1.5 bg-neutral-200 rounded-full"></div>
-                    <div class="w-5/6 h-1.5 bg-neutral-200 rounded-full"></div>
-                    <div class="w-3/4 h-1.5 bg-neutral-200 rounded-full"></div>
-                    <div class="w-full h-1.5 bg-neutral-200 rounded-full"></div>
-                    <div class="w-2/3 h-1.5 bg-neutral-200 rounded-full"></div>
-                  </div>
-
-                  <div class="flex gap-2 mt-auto">
-                    <div class="w-10 h-3 bg-neutral-200 rounded-full"></div>
-                    <div class="w-12 h-3 bg-neutral-200 rounded-full"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="relative z-10 w-4/5 aspect-square bg-white rounded-3xl shadow-lg p-6 flex flex-col items-center justify-center hover:shadow-xl transition-shadow duration-500">
-                <div
-                  class="w-full h-2 bg-neutral-100 rounded-full mb-8 animate-shimmer bg-[linear-gradient(to_right,#f5f5f5_0%,#e0e0e0_20%,#f5f5f5_40%)] bg-[length:200%_100%]">
-                </div>
-
-                <div
-                  class="text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-700 animate-text-focus-in">
-                  404
-                </div>
-
-                <div class="text-sm font-medium text-neutral-500 text-center opacity-0 animate-fade-in delay-400">
-                  <span class="inline-block relative">
-                    <span class="animate-typing-cursor delay-300">Page not found</span>
-                  </span>
-                </div>
-
-                <div class="flex space-x-3 mt-8">
-                  <div
-                    class="w-6 h-6 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors duration-300 cursor-pointer">
-                  </div>
-                  <div
-                    class="w-6 h-6 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors duration-300 cursor-pointer">
-                  </div>
-                  <div
-                    class="w-6 h-6 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors duration-300 cursor-pointer">
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="absolute -top-4 -right-4 w-28 h-16 rounded-lg bg-white shadow-sm p-3 transform rotate-6 hover:rotate-0 transition-transform duration-300">
-                <div class="w-full h-full flex flex-col justify-between">
-                  <div class="w-full flex justify-between items-center">
-                    <div class="w-3 h-3 rounded-full bg-neutral-400"></div>
-                    <div class="w-12 h-1.5 bg-neutral-400 rounded-full"></div>
-                  </div>
-                  <div
-                    class="w-full h-6 bg-neutral-200 opacity-70 rounded animate-shimmer bg-[linear-gradient(to_right,theme(colors.neutral.200)_0%,theme(colors.neutral.100)_20%,theme(colors.neutral.200)_40%)] bg-[length:200%_100%]">
-                  </div>
-                </div>
-              </div>
-
-              <div class="absolute top-1/4 -right-2 w-4 h-4 rounded-full bg-neutral-300 shadow-sm">
-              </div>
-              <div class="absolute bottom-10 -left-6 w-3 h-3 rounded-full bg-neutral-400 shadow-sm z-20">
-              </div>
-            </div>
+            <button @click="handleGoBack"
+              class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-primary font-heading font-semibold text-sm tracking-wide rounded-none hover:border-primary transition-colors duration-300">
+              GO BACK
+            </button>
           </div>
         </div>
-      </div>
 
-      <div class="text-center mt-16 animate-slide-up-fade opacity-0 delay-800">
-        <p class="text-neutral-400 text-sm font-medium tracking-wide mb-3">
-          <span class="inline-block">&mdash;</span>
-          <span class="mx-2">ERROR {{ error?.statusCode || '404' }}</span>
-          <span class="inline-block">&mdash;</span>
-        </p>
-        <div class="flex items-center justify-center space-x-6 text-sm">
-          <router-link to="/"
-            class="text-neutral-500 hover:text-neutral-700 transition-colors duration-300 flex items-center group">
-            <span class="mr-1.5 group-hover:translate-x-[-2px] transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-home">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                <polyline points="9 22 9 12 15 12 15 22"></polyline>
-              </svg>
-            </span>
-            <span class="relative overflow-hidden">
-              HOME
-              <span
-                class="absolute bottom-0 left-0 w-full h-px bg-neutral-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </span>
-          </router-link>
-          <span class="h-4 w-px bg-neutral-300"></span>
-          <a href="javascript:history.back()"
-            class="text-neutral-500 hover:text-neutral-700 transition-colors duration-300 flex items-center group">
-            <span class="mr-1.5 group-hover:translate-x-[-2px] transition-transform duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-arrow-left">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-              </svg>
-            </span>
-            <span class="relative overflow-hidden">
-              GO BACK
-              <span
-                class="absolute bottom-0 left-0 w-full h-px bg-neutral-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </span>
-          </a>
+        <!-- Right side - Visual illustration with helpful links -->
+        <div class="flex flex-col space-y-6 lg:space-y-8 opacity-0 animate-fade-in-up delay-300 lg:order-2 order-2">
+          <!-- Large 404 illustration - Hidden on mobile -->
+          <div class="relative aspect-square max-w-md mx-auto lg:mx-0 hidden lg:block">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <!-- Background circle -->
+              <div class="w-full h-full rounded-full bg-gray-50 opacity-80 animate-pulse-slow"></div>
+            </div>
+
+            <!-- 404 text -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <span class="text-8xl md:text-9xl font-heading font-bold text-gray-200 select-none">
+                404
+              </span>
+            </div>
+
+            <!-- Floating elements -->
+            <div
+              class="absolute top-4 left-4 w-12 h-12 rounded-lg bg-white shadow-sm opacity-0 animate-fade-in delay-700 transform rotate-12">
+              <div class="w-full h-full flex items-center justify-center">
+                <div class="w-6 h-6 bg-gray-200 rounded"></div>
+              </div>
+            </div>
+
+            <div
+              class="absolute bottom-8 right-6 w-16 h-16 rounded-lg bg-white shadow-sm opacity-0 animate-fade-in delay-900 transform -rotate-6">
+              <div class="w-full h-full flex flex-col justify-center items-center space-y-1">
+                <div class="w-8 h-1 bg-gray-200 rounded"></div>
+                <div class="w-6 h-1 bg-gray-200 rounded"></div>
+                <div class="w-10 h-1 bg-gray-200 rounded"></div>
+              </div>
+            </div>
+
+            <div class="absolute top-1/3 right-0 w-8 h-8 rounded-full bg-primary opacity-20 animate-bounce-slow"></div>
+            <div
+              class="absolute bottom-1/4 left-2 w-4 h-4 rounded-full bg-secondary opacity-30 animate-bounce-slow delay-500">
+            </div>
+          </div>
+
+          <!-- Quick navigation -->
+          <div class="space-y-4 lg:space-y-6 opacity-0 animate-fade-in-up delay-600">
+            <h3 class="text-lg font-heading font-semibold text-primary mb-6 lg:mb-8">
+              Maybe you're looking for:
+            </h3>
+
+            <div class="space-y-4 pb-8">
+              <NuxtLink to="/works" class="group flex items-center py-3 hover:pl-2 transition-all duration-300">
+                <div
+                  class="w-8 h-8 flex items-center justify-center mr-4 opacity-60 group-hover:opacity-100 transition-all duration-300">
+                  <Icon icon="mdi:folder-open" class="w-5 h-5 text-black" />
+                </div>
+                <div
+                  class="border-b border-gray-200 pb-2 flex-1 group-hover:border-primary transition-all duration-300 relative">
+                  <h4
+                    class="font-heading font-medium text-primary text-base group-hover:text-black transition-colors duration-300">
+                    MY WORKS</h4>
+                  <p class="text-sm text-secondary mt-1">View my projects and portfolio</p>
+                  <div class="absolute bottom-2 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Icon icon="mdi:arrow-right" class="w-4 h-4 text-primary transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </NuxtLink>
+
+              <NuxtLink to="/about" class="group flex items-center py-3 hover:pl-2 transition-all duration-300">
+                <div
+                  class="w-8 h-8 flex items-center justify-center mr-4 opacity-60 group-hover:opacity-100 transition-all duration-300">
+                  <Icon icon="mdi:card-text" class="w-5 h-5 text-black" />
+                </div>
+                <div
+                  class="border-b border-gray-200 pb-2 flex-1 group-hover:border-primary transition-all duration-300 relative">
+                  <h4
+                    class="font-heading font-medium text-primary text-base group-hover:text-black transition-colors duration-300">
+                    ABOUT ME</h4>
+                  <p class="text-sm text-secondary mt-1">Learn about my skills and experience</p>
+                  <div class="absolute bottom-2 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Icon icon="mdi:arrow-right" class="w-4 h-4 text-primary transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </NuxtLink>
+
+              <NuxtLink to="/contact" class="group flex items-center py-3 hover:pl-2 transition-all duration-300">
+                <div
+                  class="w-8 h-8 flex items-center justify-center mr-4 opacity-60 group-hover:opacity-100 transition-all duration-300">
+                  <Icon icon="mdi:email" class="w-5 h-5 text-black" />
+                </div>
+                <div
+                  class="border-b border-gray-200 pb-2 flex-1 group-hover:border-primary transition-all duration-300 relative">
+                  <h4
+                    class="font-heading font-medium text-primary text-base group-hover:text-black transition-colors duration-300">
+                    CONTACT</h4>
+                  <p class="text-sm text-secondary mt-1">Get in touch with me</p>
+                  <div class="absolute bottom-2 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Icon icon="mdi:arrow-right" class="w-4 h-4 text-primary transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </NuxtLink>
+
+              <a href="https://github.com/christianchiavelli" target="_blank" rel="noopener noreferrer"
+                class="group flex items-center py-3 hover:pl-2 transition-all duration-300">
+                <div
+                  class="w-8 h-8 flex items-center justify-center mr-4 opacity-60 group-hover:opacity-100 transition-all duration-300">
+                  <Icon icon="simple-icons:github" class="w-5 h-5 text-black" />
+                </div>
+                <div
+                  class="border-b border-gray-200 pb-2 flex-1 group-hover:border-primary transition-all duration-300 relative">
+                  <h4
+                    class="font-heading font-medium text-primary text-base group-hover:text-black transition-colors duration-300">
+                    GITHUB</h4>
+                  <p class="text-sm text-secondary mt-1">View my code and repositories</p>
+                  <div class="absolute bottom-2 right-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Icon icon="mdi:external-link" class="w-4 h-4 text-primary transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
