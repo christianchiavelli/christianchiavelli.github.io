@@ -8,32 +8,28 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-10 opacity-0 animate-fade-in delay-500">
-          <NuxtLink to="/" class="font-heading text-sm font-semibold text-primary tracking-wide relative group"
+          <NuxtLink to="/" class="font-heading text-sm font-semibold text-primary tracking-wide relative group nav-link"
             active-class="active-link">
-            HOME
-            <span
-              class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-primary/0 -translate-x-1/2 transition-all duration-300 group-hover:w-4 group-hover:bg-primary/50 nav-indicator"></span>
+            <span class="relative">HOME</span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full nav-underline"></span>
           </NuxtLink>
 
-          <NuxtLink to="/about" class="font-heading text-sm font-semibold text-primary tracking-wide relative group"
+          <NuxtLink to="/about" class="font-heading text-sm font-semibold text-primary tracking-wide relative group nav-link"
             active-class="active-link">
-            ABOUT
-            <span
-              class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-primary/0 -translate-x-1/2 transition-all duration-300 group-hover:w-4 group-hover:bg-primary/50 nav-indicator"></span>
+            <span class="relative">ABOUT</span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full nav-underline"></span>
           </NuxtLink>
 
-          <NuxtLink to="/works" class="font-heading text-sm font-semibold text-primary tracking-wide relative group"
+          <NuxtLink to="/works" class="font-heading text-sm font-semibold text-primary tracking-wide relative group nav-link"
             active-class="active-link">
-            WORKS
-            <span
-              class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-primary/0 -translate-x-1/2 transition-all duration-300 group-hover:w-4 group-hover:bg-primary/50 nav-indicator"></span>
+            <span class="relative">WORKS</span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full nav-underline"></span>
           </NuxtLink>
 
-          <NuxtLink to="/contact" class="font-heading text-sm font-semibold text-primary tracking-wide relative group"
+          <NuxtLink to="/contact" class="font-heading text-sm font-semibold text-primary tracking-wide relative group nav-link"
             active-class="active-link">
-            CONTACT
-            <span
-              class="absolute -bottom-2 left-1/2 w-0 h-0.5 bg-primary/0 -translate-x-1/2 transition-all duration-300 group-hover:w-4 group-hover:bg-primary/50 nav-indicator"></span>
+            <span class="relative">CONTACT</span>
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out group-hover:w-full nav-underline"></span>
           </NuxtLink>
         </div> <!-- Mobile Menu Button --> <button
           class="md:hidden flex items-center justify-center w-12 h-12 z-50 relative" @click="toggleMenu"
@@ -183,15 +179,21 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.active-link .nav-indicator {
-  width: 1.25rem;
-  height: 0.125rem;
-  background-color: rgb(var(--color-primary) / 1);
-  transform: translateX(-50%);
+.nav-link {
+  position: relative;
+  padding: 0.25rem 0;
 }
 
 .active-link {
-  position: relative;
   font-weight: 700;
+}
+
+.active-link .nav-underline {
+  width: 100% !important;
+}
+
+.nav-underline {
+  height: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>

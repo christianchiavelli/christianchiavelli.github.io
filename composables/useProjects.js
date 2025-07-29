@@ -16,10 +16,12 @@ export const useProjects = () => {
       description:
         "Payment orchestration platform that unifies multiple channels into a single hub. Developed for businesses needing to centralize transactions, it increases efficiency by 65%, reduces errors by 78%, and delivers a seamless experience for end customers across various payment touchpoints.",
       company: "Valtech",
-      tech: ".NET Core, Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      tech: ".NET Core, Vue 3, Nuxt 3, Pinia, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
       technologies: [
         ".NET Core",
         "Vue 3",
+        "Nuxt 3",
+        "Pinia",
         "TailwindCSS",
         "Microsoft SQL Server",
         "Git",
