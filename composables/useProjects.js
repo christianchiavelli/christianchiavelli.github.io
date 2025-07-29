@@ -16,6 +16,7 @@ export const useProjects = () => {
       description:
         "Payment orchestration platform that unifies multiple channels into a single hub. Developed for businesses needing to centralize transactions, it increases efficiency by 65%, reduces errors by 78%, and delivers a seamless experience for end customers across various payment touchpoints.",
       company: "Valtech",
+      companyLinkedIn: "https://www.linkedin.com/company/valtech",
       tech: ".NET Core, Vue 3, Nuxt 3, Pinia, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
       technologies: [
         ".NET Core",
@@ -82,6 +83,7 @@ export const useProjects = () => {
       description:
         "Digital showcase for ADM Nutrition that communicates their global leadership in nutrition solutions for humans, animals, and pets. Focusing on sustainability and innovation, the platform increased average session time by 45% and reduced bounce rate by 30%, strengthening the brand across 6 continents.",
       company: "Valtech",
+      companyLinkedIn: "https://www.linkedin.com/company/valtech",
       tech: ".NET Core, .NET Framework, Optimizely (EpiServer), Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
       technologies: [
         ".NET Core",
@@ -148,6 +150,7 @@ export const useProjects = () => {
       description:
         "Christian educational system for distance learning serving students from kindergarten through high school. With 85% student engagement and support for 10,000+ concurrent users, the platform reduced content loading time by 60% and increased student retention by 45%.",
       company: "Valtech",
+      companyLinkedIn: "https://www.linkedin.com/company/valtech",
       tech: ".NET Core, .NET Framework, Optimizely (EpiServer), Vue 3, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
       technologies: [
         ".NET Core",
@@ -209,6 +212,7 @@ export const useProjects = () => {
       description:
         "Complete restaurant management system integrating POS, ERP, kitchen management, and inventory control. Implemented by major chains like Bob's and Habib's, it increased sales by 20%, reduced inventory costs by 15%, and decreased preparation errors by 45%, revolutionizing operations across multiple locations.",
       company: "Linx Stone",
+      companyLinkedIn: "https://www.linkedin.com/company/linxretail",
       tech: ".NET Core, .NET Framework, Vue 2, Ant Design Vue, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
       technologies: [
         ".NET Core",
@@ -274,6 +278,7 @@ export const useProjects = () => {
       description:
         "Omnichannel platform that centralizes WhatsApp, telephone, social media, email, and chat into a single interface with AI assistance. Adopted by over 220 brands, it increased agent productivity by 40%, reduced resolution time by 35%, and improved NPS by 28 points.",
       company: "NeoAssist",
+      companyLinkedIn: "https://www.linkedin.com/company/neoassist-com",
       tech: "Vue 2, Sass, Git, Git Labs and JIRA.",
       technologies: ["Vue 2", "Sass", "Git", "Git Labs", "JIRA"],
       overview:
@@ -330,6 +335,7 @@ export const useProjects = () => {
       description:
         "Claims management platform for B4 Soluções that optimizes processes across five risk categories: residential, commercial, industrial, condominium, and catastrophic events. Reduced processing time by 47%, increased assessment accuracy by 38%, and incorporated over 200 metrics for regulatory analysis.",
       company: "Zeon Solutions",
+      companyLinkedIn: null,
       tech: ".NET Framework, jQuery, Bootstrap 4, Microsoft SQL Server, Git and Trello.",
       technologies: [
         ".NET Framework",
@@ -393,6 +399,7 @@ export const useProjects = () => {
       description:
         "Comprehensive platform for creating online directories that enables entrepreneurs to launch marketplaces in various niches without coding knowledge. With advanced SEO and monetization tools, it operates in 15+ countries, increased clients' average monthly revenue by 65%, and maintains a 94% retention rate.",
       company: "Arca Solutions",
+      companyLinkedIn: "https://www.linkedin.com/company/arcasolutions",
       tech: "PHP, Symfony, cPanel, Live Chat, Salesforce Ticket System.",
       technologies: ["PHP", "Symfony", "cPanel", "Live Chat", "Salesforce"],
       overview:
@@ -449,6 +456,7 @@ export const useProjects = () => {
       description:
         "Government financial management system developed for São Paulo and Rio Grande do Sul educational departments. This platform digitized paper-based processes, reduced administrative workload by 64%, ensures 100% regulatory compliance, and operates across 500+ educational institutions with transparent public funds tracking.",
       company: "MSTECH",
+      companyLinkedIn: "https://www.linkedin.com/company/mstech",
       tech: ".NET Framework, Angular, Bootstrap 4 and JIRA.",
       technologies: [".NET Framework", "Angular", "Bootstrap 4", "JIRA"],
       overview:
