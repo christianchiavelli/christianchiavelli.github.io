@@ -8,8 +8,8 @@ const props = defineProps({
 </script>
 
 <template>
-  <div
-    class="group relative bg-white border-b border-gray-100 last:border-b-0 hover:bg-gray-100/60 transition-all duration-300">
+  <NuxtLink :to="project.link"
+    class="group relative bg-white border-b border-gray-100 last:border-b-0 hover:bg-gray-100/60 transition-all duration-300 block cursor-pointer">
     <div
       class="absolute left-0 top-0 h-full w-0.5 bg-primary transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-center">
     </div>
@@ -57,56 +57,54 @@ const props = defineProps({
               </div>
 
               <div class="mt-4 md:hidden">
-                <NuxtLink :to="project.link"
-                  class="group/link relative inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-all duration-300 overflow-hidden">
+                <div class="relative inline-flex items-center text-sm font-medium text-gray-600 group-hover:text-primary transition-all duration-300 overflow-hidden">
                   <div
-                    class="absolute inset-0 bg-primary/5 rounded-lg transform scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left">
+                    class="absolute inset-0 bg-primary/5 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
                   </div>
 
                   <div class="relative flex items-center py-2">
-                    <span class="mr-2 group-hover/link:tracking-wide transition-all duration-300">View Details</span>
+                    <span class="mr-2 group-hover:tracking-wide transition-all duration-300">View Details</span>
                     <div class="relative overflow-hidden">
-                      <svg class="w-4 h-4 transform transition-all duration-300 group-hover/link:translate-x-1"
+                      <svg class="w-4 h-4 transform transition-all duration-300 group-hover:translate-x-1"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                       <svg
-                        class="w-4 h-4 absolute top-0 left-0 transform -translate-x-4 transition-all duration-300 group-hover/link:translate-x-0"
+                        class="w-4 h-4 absolute top-0 left-0 transform -translate-x-4 transition-all duration-300 group-hover:translate-x-0"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
                   </div>
-                </NuxtLink>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="hidden md:block flex-shrink-0 md:ml-6 mt-4 md:mt-0">
-            <NuxtLink :to="project.link"
-              class="group/link relative inline-flex items-center text-sm font-medium text-gray-600 hover:text-primary transition-all duration-300 overflow-hidden">
+            <div class="relative inline-flex items-center text-sm font-medium text-gray-600 group-hover:text-primary transition-all duration-300 overflow-hidden">
               <div
-                class="absolute inset-0 bg-primary/5 rounded-lg transform scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300 origin-left">
+                class="absolute inset-0 bg-primary/5 rounded-lg transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
               </div>
 
               <div class="relative flex items-center px-4 py-2">
-                <span class="mr-2 group-hover/link:tracking-wide transition-all duration-300">View Details</span>
+                <span class="mr-2 group-hover:tracking-wide transition-all duration-300">View Details</span>
                 <div class="relative overflow-hidden">
-                  <svg class="w-4 h-4 transform transition-all duration-300 group-hover/link:translate-x-1" fill="none"
+                  <svg class="w-4 h-4 transform transition-all duration-300 group-hover:translate-x-1" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                   <svg
-                    class="w-4 h-4 absolute top-0 left-0 transform -translate-x-4 transition-all duration-300 group-hover/link:translate-x-0"
+                    class="w-4 h-4 absolute top-0 left-0 transform -translate-x-4 transition-all duration-300 group-hover:translate-x-0"
                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </div>
-            </NuxtLink>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>

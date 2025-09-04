@@ -3,6 +3,74 @@ export const useProjects = () => {
     {
       id: 1,
       number: "01",
+      slug: "prisma",
+      title: "Prisma",
+      category: "SINGLE SIGN-ON AUTHENTICATION PLATFORM",
+      image: "/images/prisma.jpg",
+      link: "/portfolio/prisma",
+      heroImage: "/images/prisma.jpg",
+      clientLogo: "/images/prisma.jpg",
+      year: "2024-2025",
+      client: "HCosta",
+      role: "Frontend Developer",
+      description:
+        "Centralized authentication and authorization platform that unifies access to multiple enterprise systems through a single sign-on solution. Replaced 10+ individual system logins with one secure access point, reducing authentication complexity by 90% and improving user experience across the entire organization.",
+      company: "HCosta",
+      companyLinkedIn: "https://www.linkedin.com/company/hcostaoficial",
+      tech: "Nuxt 3, TypeScript, Vue 3, Pinia, TailwindCSS, .NET Core, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      technologies: [
+        "Nuxt 3",
+        "TypeScript",
+        "Vue 3",
+        "Pinia",
+        "TailwindCSS",
+        ".NET Core",
+        "Microsoft SQL Server",
+        "Git",
+        "Azure DevOps",
+        "JIRA",
+      ],
+      overview:
+        "Enterprise-grade SSO platform that centralizes authentication across multiple internal systems. Implements role-based access control, seamless module federation integration for legacy systems, and provides a unified dashboard for system access management.",
+      challenge:
+        "Organization had 10+ separate systems requiring individual logins, creating user frustration, security vulnerabilities, and administrative overhead. Needed a centralized authentication solution that could integrate with existing systems without major refactoring.",
+      solution:
+        "Developed a comprehensive SSO platform using Nuxt 3 with TypeScript for type safety. Implemented secure authentication flows, role-based authorization, and module federation architecture to integrate legacy systems seamlessly while maintaining security standards.",
+      results:
+        "Eliminated the need for 10+ separate logins, reducing authentication time by 90%. Improved security posture through centralized access control and reduced administrative overhead by 75%. Enhanced user satisfaction with seamless system transitions.",
+      achievements: [
+        {
+          title: "Authentication Unification",
+          description:
+            "Successfully consolidated 10+ separate authentication systems into a single, secure SSO platform, eliminating password fatigue and reducing security vulnerabilities by 85%.",
+        },
+        {
+          title: "Microfrontend Integration",
+          description:
+            "Implemented module federation architecture that allowed seamless integration of legacy systems without requiring major refactoring, reducing implementation time by 60%.",
+        },
+        {
+          title: "Role-Based Access Control",
+          description:
+            "Developed sophisticated permission system that dynamically shows/hides system access based on user roles, improving security compliance and reducing unauthorized access attempts by 95%.",
+        },
+        {
+          title: "User Experience Optimization",
+          description:
+            "Created intuitive dashboard interface that reduced average system access time from 3+ minutes to under 10 seconds, achieving 98% user satisfaction rate in internal surveys.",
+        },
+      ],
+      testimonial: {
+        quote:
+          "Prisma SSO has revolutionized how our employees access company systems. What used to be a frustrating daily routine of managing multiple passwords has become a seamless, one-click experience. The platform's intelligent role-based access ensures everyone sees exactly what they need, when they need it, while maintaining our strict security standards.",
+        author: "IT Director",
+        company: "HCosta",
+      },
+      nextProject: "channels-hub",
+    },
+    {
+      id: 2,
+      number: "02",
       slug: "channels-hub",
       title: "Channels Hub",
       category: "MULTICHANNEL PAYMENT PLATFORM",
@@ -15,15 +83,16 @@ export const useProjects = () => {
       role: "Frontend Developer",
       description:
         "Payment orchestration platform that unifies multiple channels into a single hub. Developed for businesses needing to centralize transactions, it increases efficiency by 65%, reduces errors by 78%, and delivers a seamless experience for end customers across various payment touchpoints.",
-      company: "Valtech",
-      companyLinkedIn: "https://www.linkedin.com/company/valtech",
-      tech: ".NET Core, Vue 3, Nuxt 3, Pinia, TailwindCSS, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
+      company: "HCosta",
+      companyLinkedIn: "https://www.linkedin.com/company/hcostaoficial",
+      tech: "Nuxt 3, TypeScript, Vue 3, Pinia, TailwindCSS, .NET Core, Microsoft SQL Server, Git, Azure DevOps and JIRA.",
       technologies: [
-        ".NET Core",
-        "Vue 3",
         "Nuxt 3",
+        "TypeScript",
+        "Vue 3",
         "Pinia",
         "TailwindCSS",
+        ".NET Core",
         "Microsoft SQL Server",
         "Git",
         "Azure DevOps",
@@ -68,8 +137,8 @@ export const useProjects = () => {
       nextProject: "adm-nutrition",
     },
     {
-      id: 2,
-      number: "02",
+      id: 3,
+      number: "03",
       slug: "adm-nutrition",
       title: "ADM Nutrition",
       category: "GLOBAL NUTRITION SOLUTIONS PLATFORM",
@@ -135,8 +204,8 @@ export const useProjects = () => {
       nextProject: "abeka",
     },
     {
-      id: 3,
-      number: "03",
+      id: 4,
+      number: "04",
       slug: "abeka",
       title: "Abeka",
       category: "EDUCATIONAL SYSTEM",
@@ -197,8 +266,8 @@ export const useProjects = () => {
       nextProject: "degust-one",
     },
     {
-      id: 4,
-      number: "04",
+      id: 5,
+      number: "05",
       slug: "degust-one",
       title: "Degust One",
       category: "RESTAURANT MANAGEMENT SYSTEM",
@@ -263,8 +332,8 @@ export const useProjects = () => {
       nextProject: "neoassist360",
     },
     {
-      id: 5,
-      number: "05",
+      id: 6,
+      number: "06",
       slug: "neoassist360",
       title: "NeoAssist360",
       category: "CUSTOMER EXPERIENCE PLATFORM",
@@ -320,8 +389,8 @@ export const useProjects = () => {
       nextProject: "segweb",
     },
     {
-      id: 6,
-      number: "06",
+      id: 7,
+      number: "07",
       slug: "segweb",
       title: "Segweb B4",
       category: "INSURANCE CLAIMS MANAGEMENT PLATFORM",
@@ -384,8 +453,8 @@ export const useProjects = () => {
       nextProject: "edirectory",
     },
     {
-      id: 7,
-      number: "07",
+      id: 8,
+      number: "08",
       slug: "edirectory",
       title: "eDirectory",
       category: "ENTERPRISE DIRECTORY PLATFORM",
@@ -441,8 +510,8 @@ export const useProjects = () => {
       nextProject: "ptrf",
     },
     {
-      id: 8,
-      number: "08",
+      id: 9,
+      number: "09",
       slug: "ptrf",
       title: "PTRF",
       category: "GOVERNMENT FINANCIAL MANAGEMENT SYSTEM",
@@ -495,7 +564,7 @@ export const useProjects = () => {
         author: "Secretary of Education",
         company: "São Paulo State Department of Education",
       },
-      nextProject: "channels-hub",
+      nextProject: "prisma",
     },
   ];
 
